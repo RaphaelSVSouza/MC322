@@ -1,5 +1,5 @@
 # MC322
 
-Laboratórios da disciplina da UNICAMO de Programação Orientada a Objetos, 
+Curso de Programação Orientada a Objetos na UNICAMP, 
 
-em dupla com @RaphaelSVSouza.
+feito em dupla com @RaphaelSVSouza.
