@@ -10,7 +10,7 @@ public class Artigo extends Obra {
     int edicao, String editora, int numDePaginas, boolean ebook) {
 
         super(tipo, assunto, isbn, titulo, autor, universidade, null, ano, 0, numDePaginas, numDePaginas);
-        this.referencias = new ArrayList<>();
+        this.referencias = new ArrayList<Obra>();
     }
 
     public ArrayList<Obra> getReferencias() {
