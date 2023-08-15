@@ -3,25 +3,25 @@ package lab01;
 import java.util.ArrayList;
 
 public class Biblioteca {
-	private Livro[] livros;
+	private Obra[] obras;
     private ArrayList<Professor> professores = new ArrayList<Professor>();
     private ArrayList<Aluno> alunos = new ArrayList<Aluno>();
     private ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
     
     // Construtor
-    public Biblioteca(int max_livros) {
-        this.livros = new Livro[max_livros];
+    public Biblioteca(int max_obras) {
+        this.obras = new Livro[max_obras];
         this.professores = new ArrayList<Professor>();
         this.alunos = new ArrayList<Aluno>();
         this.funcionarios = new ArrayList<Funcionario>();
     }
 
-    public Livro[] getLivros() {
-        return this.livros;
+    public Obra[] getObras() {
+        return this.obras;
     }
 
-    public void setLivros(Livro[] livros) {
-        this.livros = livros;
+    public void setLivros(Obra[] obras) {
+        this.obras = obras;
     }
 
     public ArrayList<Professor> getProfessores() {
