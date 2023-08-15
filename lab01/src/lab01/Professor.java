@@ -12,7 +12,7 @@ public class Professor extends Pessoa {
         super(nome, cpf);
         this.professor_registro = professor_registro;
         this.instituto = instituto;
-        this.livros_alugados = new ArrayList<>();
+        this.livros_alugados = new ArrayList<Livro>();
     }
 
     public int getProfessor_registro() {

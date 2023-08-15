@@ -1,7 +1,7 @@
 package lab01;
 
 public class Obra {
-    private final String tipo; // verifica se é um livro, artigo, monografia e etc. Além de considerar que tudo exceto livro, tem publicação online em ebook
+    private final String tipo; // indentifica se é um livro, artigo, monografia e etc. Além de considerar que tudo exceto livro, tem publicação online em ebook
     private final String assunto;
     private final String isbn; // Catalogo internacional para livros, artigos, monografias e etc.
     private final String titulo;
@@ -14,7 +14,10 @@ public class Obra {
     private final int numDePaginas;
 
 
-    public Obra(String tipo, String assunto, String isbn, String titulo, String autor, String universidade, String editora, int ano, int edicao, int pagina, int numDePaginas) {
+    public Obra(String tipo, String assunto, String isbn, String titulo, 
+    String autor, String universidade, String editora, int ano, 
+    int edicao, int pagina, int numDePaginas) {
+
         this.tipo = tipo;
         this.assunto = assunto;
         this.isbn = isbn;
