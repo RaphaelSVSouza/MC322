@@ -31,5 +31,83 @@ public class Livro {
         this.numExemplares = numExemplares;
         this.ebook = ebook;
     }
+
+    public String getTipo() {
+        return this.tipo;
+    }
+
+
+    public String getAssunto() {
+        return this.assunto;
+    }
+
+
+    public String getIsbn() {
+        return this.isbn;
+    }
+
+
+    public String getRegistro() {
+        return this.registro;
+    }
+
+
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+
+    public String getAutor() {
+        return this.autor;
+    }
+
+
+    public String getUniversidade() {
+        return this.universidade;
+    }
+
+
+    public int getAno() {
+        return this.ano;
+    }
+
+
+    public int getEdicao() {
+        return this.edicao;
+    }
+
+
+    public int getNumDePaginas() {
+        return this.numDePaginas;
+    }
+
+
+    public int getNumExemplares() {
+        return this.numExemplares;
+    }
+
+    public void setNumExemplares(int numExemplares) {
+        this.numExemplares = numExemplares;
+    }
+
+    public int getNumEmprestados() {
+        return this.numEmprestados;
+    }
+
+    public void setNumEmprestados(int numEmprestados) {
+        this.numEmprestados = numEmprestados;
+    }
+
+    public boolean isEbook() {
+        return this.ebook;
+    }
+
+    public boolean getEbook() {
+        return this.ebook;
+    }
+
+    public void setEbook(boolean ebook) {
+        this.ebook = ebook;
+    }
     
 }

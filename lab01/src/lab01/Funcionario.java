@@ -8,4 +8,13 @@ public class Funcionario extends Pessoa{
         super(nome, cpf);
         this.funcao = funcao;
     }
+
+    public String getFuncao() {
+        return this.funcao;
+    }
+
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
+    }
+
 }

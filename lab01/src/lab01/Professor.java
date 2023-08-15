@@ -14,4 +14,26 @@ public class Professor extends Pessoa {
         this.instituto = instituto;
         this.livros_alugados = new ArrayList<>();
     }
+
+    public int getProfessor_registro() {
+        return this.professor_registro;
+    }
+
+
+    public String getInstituto() {
+        return this.instituto;
+    }
+
+    public void setInstituto(String instituto) {
+        this.instituto = instituto;
+    }
+
+    public ArrayList<Livro> getLivros_alugados() {
+        return this.livros_alugados;
+    }
+
+    public void setLivros_alugados(ArrayList<Livro> livros_alugados) {
+        this.livros_alugados = livros_alugados;
+    }
+
 }
