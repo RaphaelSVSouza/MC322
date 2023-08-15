@@ -21,6 +21,7 @@ public class Aluno extends Pessoa {
         this.livros_alugados = new ArrayList<>();
     }
 
+    //Getters & Setters
     public int getRegistro_aluno() {
         return this.registro_aluno;
     }

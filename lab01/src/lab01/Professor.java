@@ -15,6 +15,7 @@ public class Professor extends Pessoa {
         this.livros_alugados = new ArrayList<Livro>();
     }
 
+    // Getters & Setters
     public int getProfessor_registro() {
         return this.professor_registro;
     }

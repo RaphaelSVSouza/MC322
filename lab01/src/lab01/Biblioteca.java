@@ -16,6 +16,7 @@ public class Biblioteca {
         this.funcionarios = new ArrayList<Funcionario>();
     }
 
+    //Getters & Setters
     public Obra[] getObras() {
         return this.obras;
     }

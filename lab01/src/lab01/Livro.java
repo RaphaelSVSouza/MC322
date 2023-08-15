@@ -18,6 +18,7 @@ public class Livro extends Obra{
         this.ebook = ebook;
     }
 
+    //Getters & Setters
     public String getRegistro_livro() {
         return this.registro_livro;
     }

@@ -13,6 +13,7 @@ public class Artigo extends Obra {
         this.referencias = new ArrayList<Obra>();
     }
 
+    //Getters & Setters
     public ArrayList<Obra> getReferencias() {
         return this.referencias;
     }

@@ -13,7 +13,7 @@ public class Obra {
     private final int pagina;
     private final int numDePaginas;
 
-
+    // Construtor
     public Obra(String tipo, String assunto, String isbn, String titulo, 
     String autor, String universidade, String editora, int ano, 
     int edicao, int pagina, int numDePaginas) {
@@ -31,7 +31,7 @@ public class Obra {
         this.numDePaginas = numDePaginas;
     }
 
-
+    //Getters & Setters
     public String getTipo() {
         return this.tipo;
     }
