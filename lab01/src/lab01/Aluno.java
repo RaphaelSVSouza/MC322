@@ -20,4 +20,54 @@ public class Aluno extends Pessoa {
         this.modalidade = modalidade;
         this.livros_alugados = new ArrayList<>();
     }
+
+    //Getters & Setters
+    public int getRegistro_aluno() {
+        return this.registro_aluno;
+    }
+
+    public String getFaculdade() {
+        return this.faculdade;
+    }
+
+    public void setFaculdade(String faculdade) {
+        this.faculdade = faculdade;
+    }
+
+    public boolean isSuspenso() {
+        return this.suspenso;
+    }
+
+    public boolean getSuspenso() {
+        return this.suspenso;
+    }
+
+    public void setSuspenso(boolean suspenso) {
+        this.suspenso = suspenso;
+    }
+
+    public int getTempo_multa() {
+        return this.tempo_multa;
+    }
+
+    public void setTempo_multa(int tempo_multa) {
+        this.tempo_multa = tempo_multa;
+    }
+
+    public String getModalidade() {
+        return this.modalidade;
+    }
+
+    public void setModalidade(String modalidade) {
+        this.modalidade = modalidade;
+    }
+
+    public ArrayList<Livro> getLivros_alugados() {
+        return this.livros_alugados;
+    }
+
+    public void setLivros_alugados(ArrayList<Livro> livros_alugados) {
+        this.livros_alugados = livros_alugados;
+    }
+
 }
