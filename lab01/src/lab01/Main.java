@@ -15,7 +15,7 @@ public class Main {
 		
 		Pessoa leticia = new Pessoa("Leticia", 32992907898L);
 		Aluno aluno1 = new Aluno(leticia.getNome(), leticia.getCPF(), 254175, "IFGW", false, 0, "Graduação");
-		
+
 		Pessoa luciano = new Pessoa("Luciano", 93297242809L);
 		Funcionario func1 = new Funcionario(luciano.getNome(), luciano.getCPF(), "gerente");
 	}
