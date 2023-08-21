@@ -1,30 +1,28 @@
 package obras;
 
-import java.util.ArrayList;
-
 public class Dissertacao extends Obra {
+    private final String universidade;
+    private final String doi;
 
-    private ArrayList<Obra> referencias_artigos;
-    private final String chamada_dissetacao;
-
-    public Dissertacao(String tipo, String assunto, String isbn, String titulo, 
-    String autor, String universidade, int ano, int numDePaginas, String chamada_dissetacao) {
-        
-        super(tipo, assunto, isbn, titulo, autor, universidade, null, ano, 0, numDePaginas, numDePaginas);
-        this.chamada_dissetacao = tipo + "/" + universidade + assunto + isbn;
-        this.referencias_artigos = new ArrayList<Obra>();
+    //Construtores
+    public Dissertacao(int tombo, String assunto, String titulo,
+                       String autor, int ano, String localDePublicacao, String idioma,
+                       int numDePaginas, int numExemplares, int numEmprestados,
+                       boolean ebookStatus, String universidade, String doi) {
+    	super(tombo, "Dissertacao", assunto, 
+    			("DIS" + "/" + universidade + "-" + assunto + tombo),
+    			titulo, autor, ano, localDePublicacao, idioma,
+		      numDePaginas, numExemplares, numEmprestados, ebookStatus);
+		this.universidade = universidade;
+		this.doi = doi;
     }
 
-    public String getChamada_dissetacao() {
-        return this.chamada_dissetacao;
+    //Getters & Setters
+    public String getUniversidade() {
+        return universidade;
     }
 
-    public ArrayList<Obra> getReferencias_artigos() {
-        return this.referencias_artigos;
+    public String getDoi() {
+        return doi;
     }
-
-    public void setReferencias_artigos(ArrayList<Obra> referencias_artigos) {
-        this.referencias_artigos = referencias_artigos;
-    }
-
 }

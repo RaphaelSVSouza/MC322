@@ -1,89 +1,105 @@
 package obras;
 
 public class Obra {
-    private final String tipo; // indentifica se é um livro, artigo, monografia e etc. Além de considerar que tudo exceto livro, tem publicação online em ebook
+    private final int tombo;
+    private final String tipo;
     private final String assunto;
-    private final String isbn; // Catalogo internacional para livros, artigos, monografias e etc.
+    private final String registro;
     private final String titulo;
     private final String autor;
-    private final String universidade; // atributo relacionado à artigos, no qual é inserido a universidade do autor principal
-    private final String editora;
     private final int ano;
-    private final int edicao;
-    private final int pagina;
+    private final String localDePublicacao;
+    private final String idioma;
     private final int numDePaginas;
+    private int numExemplares;
+    private int numEmprestados;
+    private boolean ebookStatus;
 
-    // Construtor
-    public Obra(String tipo, String assunto, String isbn, String titulo, 
-    String autor, String universidade, String editora, int ano, 
-    int edicao, int pagina, int numDePaginas) {
-
-        this.tipo = tipo;
+    //Construtores
+    public Obra(int tombo, String tipo, String assunto, String registro, String titulo,
+                String autor, int ano, String localDePublicacao, String idioma,
+                int numDePaginas, int numExemplares, int numEmprestados, boolean ebookStatus) {
+        
+    	this.tombo = tombo;
+        
+    	this.tipo = tipo;
         this.assunto = assunto;
-        this.isbn = isbn;
+        
+        this.registro = registro;
+        
         this.titulo = titulo;
         this.autor = autor;
-        this.universidade = universidade;
-        this.editora = editora;
         this.ano = ano;
-        this.edicao = edicao;
-        this.pagina = pagina;
+        this.localDePublicacao = localDePublicacao;
+        this.idioma = idioma;
         this.numDePaginas = numDePaginas;
+        this.numExemplares = numExemplares;
+        this.numEmprestados = numEmprestados;
+        this.ebookStatus = ebookStatus;
     }
 
-    //Getters & Setters
+    public int getTombo() {
+        return tombo;
+    }
+
     public String getTipo() {
-        return this.tipo;
+        return tipo;
     }
-
 
     public String getAssunto() {
-        return this.assunto;
+        return assunto;
     }
 
-
-    public String getIsbn() {
-        return this.isbn;
+    public String getRegistro() {
+        return registro;
     }
-
 
     public String getTitulo() {
-        return this.titulo;
+        return titulo;
     }
-
 
     public String getAutor() {
-        return this.autor;
+        return autor;
     }
-
-
-    public String getUniversidade() {
-        return this.universidade;
-    }
-
-
-    public String getEditora() {
-        return this.editora;
-    }
-
 
     public int getAno() {
-        return this.ano;
+        return ano;
+    }
+    
+    public String getLocalDePublicacao() {
+        return localDePublicacao;
     }
 
-
-    public int getEdicao() {
-        return this.edicao;
+    public String getIdioma() {
+        return idioma;
     }
-
-
-    public int getPagina() {
-        return this.pagina;
-    }
-
 
     public int getNumDePaginas() {
-        return this.numDePaginas;
+        return numDePaginas;
     }
 
+    public int getNumExemplares() {
+        return numExemplares;
+    }
+
+    public void setNumExemplares(int numExemplares) {
+        this.numExemplares = numExemplares;
+    }
+
+    public int getNumEmprestados() {
+        return numEmprestados;
+    }
+
+    public void setNumEmprestados(int numEmprestados) {
+        this.numEmprestados = numEmprestados;
+    }
+
+    public boolean isEbookStatus() {
+        return ebookStatus;
+    }
+
+    public void setEbookStatus(boolean ebookStatus) {
+        this.ebookStatus = ebookStatus;
+    }
 }
+

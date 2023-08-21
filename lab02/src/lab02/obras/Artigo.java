@@ -1,25 +1,34 @@
 package obras;
 
-import java.util.ArrayList;
-
 public class Artigo extends Obra {
-    
-    private ArrayList<Obra> referencias;
+    private final String fonte; //revista, qual página e capítulo da revista, etc..
+    private final String doi;
+    private final String universidade;
 
-    public Artigo(String tipo, String assunto, String isbn, String titulo, String autor, String universidade, int ano, 
-    int edicao, String editora, int numDePaginas, boolean ebook) {
-
-        super(tipo, assunto, isbn, titulo, autor, universidade, null, ano, 0, numDePaginas, numDePaginas);
-        this.referencias = new ArrayList<Obra>();
+    //Construtores
+    public Artigo(int tombo, String assunto, String titulo,
+                 String autor, int ano, String localDePublicacao, String idioma,
+                 int numDePaginas, int numExemplares, int numEmprestados, boolean ebookStatus,
+                 String fonte, String doi, String universidade) {
+        super(tombo, "Artigo", assunto, 
+        		("ART" + "/" + universidade + "-" + assunto + tombo), 
+        		titulo, autor, ano, localDePublicacao, idioma,
+              numDePaginas, numExemplares, numEmprestados, ebookStatus);
+        this.fonte = fonte;
+        this.doi = doi;
+        this.universidade = universidade;
     }
 
     //Getters & Setters
-    public ArrayList<Obra> getReferencias() {
-        return this.referencias;
+    public String getFonte() {
+        return fonte;
     }
 
-    public void setReferencias(ArrayList<Obra> referencias) {
-        this.referencias = referencias;
+    public String getDoi() {
+        return doi;
     }
 
+    public String getUniversidade() {
+        return universidade;
+    }
 }

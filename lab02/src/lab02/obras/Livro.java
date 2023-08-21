@@ -1,55 +1,40 @@
 package obras;
 
-public class Livro extends Obra{
+public class Livro extends Obra {
+    private final String isbn;
+    private final int edicao;
+    private final String editora;
+    private final int volume;
 
-    private final String registro_livro;
-    private int numExemplares;
-    private int numEmprestados;
-    private boolean ebook; // verifica se tem disponivel como ebook
-
-    // Construtor
-
-    public Livro(String tipo, String assunto, String isbn, String titulo, String autor, int ano, 
-    int edicao, String editora, int numDePaginas, int numExemplares, int numEmprestados, boolean ebook) {
-        super(tipo, assunto, isbn, titulo, autor, null, editora, ano, edicao, numDePaginas, numDePaginas);
-        this.registro_livro = assunto + isbn;
-        this.numExemplares = numExemplares;
-        this.numEmprestados = numEmprestados;
-        this.ebook = ebook;
+    //construtor
+    public Livro(int tombo, String isbn, String assunto, String titulo,
+                String autor, int ano, String localDePublicacao, String idioma,
+                int numDePaginas, int edicao, String editora, int volume, 
+                boolean ebookStatus, int numExemplares, int numEmprestados) {
+        super(tombo, "Livro", assunto, 
+        		(assunto + isbn + "-" + tombo), 
+        		titulo, autor, ano, localDePublicacao, idioma,
+              numDePaginas, numExemplares, numEmprestados, ebookStatus);
+        this.isbn = isbn;
+        this.edicao = edicao;
+        this.editora = editora;
+        this.volume = volume;
     }
 
     //Getters & Setters
-    public String getRegistro_livro() {
-        return this.registro_livro;
+    public String getIsbn() {
+        return isbn;
     }
 
-
-    public int getNumExemplares() {
-        return this.numExemplares;
+    public int getEdicao() {
+        return edicao;
     }
 
-    public void setNumExemplares(int numExemplares) {
-        this.numExemplares = numExemplares;
+    public String getEditora() {
+        return editora;
     }
 
-    public int getNumEmprestados() {
-        return this.numEmprestados;
+    public int getVolume() {
+        return volume;
     }
-
-    public void setNumEmprestados(int numEmprestados) {
-        this.numEmprestados = numEmprestados;
-    }
-
-    public boolean isEbook() {
-        return this.ebook;
-    }
-
-    public boolean getEbook() {
-        return this.ebook;
-    }
-
-    public void setEbook(boolean ebook) {
-        this.ebook = ebook;
-    }
-
 }

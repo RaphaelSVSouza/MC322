@@ -2,26 +2,25 @@ package pessoas;
 
 import java.util.ArrayList;
 
-import obras.Livro;
+import obras.Obra;
 
 public class Professor extends Pessoa {
-    private final int professor_registro;
+    private final int professorRegistro;
     private String instituto;
-    private ArrayList<Livro> livros_alugados;
+    private ArrayList<Obra> obrasAlugadas;
 
     // Construtor
     public Professor(String nome, long cpf, int professor_registro, String instituto) {
         super(nome, cpf);
-        this.professor_registro = professor_registro;
+        this.professorRegistro = professor_registro;
         this.instituto = instituto;
-        this.livros_alugados = new ArrayList<Livro>();
+        this.obrasAlugadas = new ArrayList<Obra>();
     }
 
     // Getters & Setters
     public int getProfessor_registro() {
-        return this.professor_registro;
+        return this.professorRegistro;
     }
-
 
     public String getInstituto() {
         return this.instituto;
@@ -31,12 +30,12 @@ public class Professor extends Pessoa {
         this.instituto = instituto;
     }
 
-    public ArrayList<Livro> getLivros_alugados() {
-        return this.livros_alugados;
+    public ArrayList<Obra> getObrasAlugadas() {
+        return this.obrasAlugadas;
     }
 
-    public void setLivros_alugados(ArrayList<Livro> livros_alugados) {
-        this.livros_alugados = livros_alugados;
+    public void setLivros_alugados(ArrayList<Obra> livros_alugados) {
+        this.obrasAlugadas = livros_alugados;
     }
 
 }

@@ -1,26 +1,25 @@
 package pessoas;
 
 import java.util.ArrayList;
-
-import obras.Livro;
+import obras.Obra;
 
 public class Aluno extends Pessoa {
     private final int registro_aluno; // matrícula/RA
     private String faculdade; // instituto do curso do aluno
     private boolean suspenso; // multa calculada em dias
-    private int tempo_multa;
+    private int tempoMulta;
     private String modalidade; // graduação ou pós-graduação
-    private ArrayList<Livro> livros_alugados;
+    private ArrayList<Obra> obrasAlugadas;
 
- // Construtor
+    //Construtores
     public Aluno(String nome, long cpf, int registro_aluno, String faculdade,  boolean suspenso, int tempo_multa, String modalidade) {
         super(nome, cpf);
         this.registro_aluno = registro_aluno;
         this.faculdade = faculdade;
         this.suspenso = suspenso;
-        this.tempo_multa = tempo_multa;
+        this.tempoMulta = tempo_multa;
         this.modalidade = modalidade;
-        this.livros_alugados = new ArrayList<>();
+        this.obrasAlugadas = new ArrayList<Obra>();
     }
 
     //Getters & Setters
@@ -49,11 +48,11 @@ public class Aluno extends Pessoa {
     }
 
     public int getTempo_multa() {
-        return this.tempo_multa;
+        return this.tempoMulta;
     }
 
     public void setTempo_multa(int tempo_multa) {
-        this.tempo_multa = tempo_multa;
+        this.tempoMulta = tempo_multa;
     }
 
     public String getModalidade() {
@@ -64,12 +63,12 @@ public class Aluno extends Pessoa {
         this.modalidade = modalidade;
     }
 
-    public ArrayList<Livro> getLivros_alugados() {
-        return this.livros_alugados;
+    public ArrayList<Obra> getLivros_alugados() {
+        return this.obrasAlugadas;
     }
 
-    public void setLivros_alugados(ArrayList<Livro> livros_alugados) {
-        this.livros_alugados = livros_alugados;
+    public void setLivros_alugados(ArrayList<Obra> livros_alugados) {
+        this.obrasAlugadas = livros_alugados;
     }
 
 }
