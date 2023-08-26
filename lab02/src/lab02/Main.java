@@ -8,6 +8,7 @@ public class Main {
 		Biblioteca biblioteca = new Biblioteca("Cesar Lattes", 100);
 
 		Livro livro1 = new Livro(
+				//perceba a associação entre Livro e Biblioteca para receber NumLivros
 			    biblioteca.getNumLivros(),    // tombo
 			    "9788574803999",              // isbn
 			    "ROM",                        // assunto
@@ -27,6 +28,7 @@ public class Main {
 		biblioteca.addObra(livro1);
 		
 		Livro livro2 = new Livro(
+				//perceba a associação entre Livro e Biblioteca para receber NumLivros
 			    biblioteca.getNumLivros(),    // tombo
 			    "9788574803999",              // isbn
 			    "ROM",                        // assunto
@@ -46,6 +48,7 @@ public class Main {
 		biblioteca.addObra(livro2);
 		
         Artigo artigo1 = new Artigo(
+        		//perceba a associação entre Livro e Biblioteca para receber NumArtigos
         		biblioteca.getNumArtigos(), // tombo
                 "Bioinfo",      // assunto
                 "Avanços em Sequenciamento de DNA",  // titulo
