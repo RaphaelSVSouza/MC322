@@ -5,14 +5,13 @@ public class Dissertacao extends Obra {
     private final String doi;
 
     //Construtores
-    public Dissertacao(int tombo, String assunto, String titulo,
-                       String autor, int ano, String localDePublicacao, String idioma,
-                       int numDePaginas, int numExemplares, int numEmprestados,
-                       boolean ebookStatus, String universidade, String doi) {
+    public Dissertacao(int tombo, String tipo, String assunto, String registro, String titulo, String autor,
+            int ano, String idioma, int numExemplares, int numEmprestados,
+            int numDePaginas, String localDePublicacao, boolean ebookStatus, String universidade, String doi) {
     	super(tombo, "Dissertacao", assunto, 
     			("DIS" + "/" + universidade + "-" + assunto + tombo),
-    			titulo, autor, ano, localDePublicacao, idioma,
-		      numDePaginas, numExemplares, numEmprestados, ebookStatus);
+    			titulo, autor, ano, idioma, numExemplares, numEmprestados,numDePaginas, localDePublicacao,
+                ebookStatus);
 		this.universidade = universidade;
 		this.doi = doi;
     }

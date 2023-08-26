@@ -8,8 +8,8 @@ public class Main {
 		Biblioteca biblioteca = new Biblioteca("Cesar Lattes", 100);
 
 		Livro livro1 = new Livro(
-			    biblioteca.getNumLivros(),   // tombo
-			    "9788574803999",             // isbn
+			    biblioteca.getNumLivros(),    // tombo
+			    "9788574803999",              // isbn
 			    "ROM",                        // assunto
 			    "Clásssicos: Dom Casmurro",   // titulo
 			    "Machado de Assis",           // autor
@@ -39,7 +39,7 @@ public class Main {
                 true,                   // ebookStatus
                 "Nature Genetics",      // fonte
                 "10.1234/abcd",         // doi
-                "UNICAMP"  // universidade
+                "UNICAMP" 			    // universidade
             );
 
 		Professor prof1 = new Professor("Marcos", 51234714809L, 123456, "IC");

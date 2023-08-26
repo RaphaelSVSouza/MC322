@@ -8,17 +8,13 @@ public class Obra {
     private final String titulo;
     private final String autor;
     private final int ano;
-    private final String localDePublicacao;
     private final String idioma;
-    private final int numDePaginas;
     private int numExemplares;
     private int numEmprestados;
-    private boolean ebookStatus;
 
     //Construtores
     public Obra(int tombo, String tipo, String assunto, String registro, String titulo,
-                String autor, int ano, String localDePublicacao, String idioma,
-                int numDePaginas, int numExemplares, int numEmprestados, boolean ebookStatus) {
+                String autor, int ano, String idioma, int numExemplares, int numEmprestados) {
         
     	this.tombo = tombo;
         

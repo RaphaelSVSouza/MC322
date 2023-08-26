@@ -1,19 +1,19 @@
 package obras;
 
-public class Artigo extends Obra {
+public class Artigo extends ExemplarFisico {
     private final String fonte; //revista, qual página e capítulo da revista, etc..
     private final String doi;
     private final String universidade;
 
     //Construtores
-    public Artigo(int tombo, String assunto, String titulo,
-                 String autor, int ano, String localDePublicacao, String idioma,
-                 int numDePaginas, int numExemplares, int numEmprestados, boolean ebookStatus,
+    public Artigo(int tombo, String tipo, String assunto, String registro, String titulo, String autor,
+            int ano, String idioma, int numExemplares, int numEmprestados,
+            int numDePaginas, String localDePublicacao, boolean ebookStatus,
                  String fonte, String doi, String universidade) {
         super(tombo, "Artigo", assunto, 
         		("ART" + "/" + universidade + "-" + assunto + tombo), 
-        		titulo, autor, ano, localDePublicacao, idioma,
-              numDePaginas, numExemplares, numEmprestados, ebookStatus);
+        		titulo, autor, ano, idioma, numExemplares, numEmprestados,numDePaginas, localDePublicacao,
+               ebookStatus);
         this.fonte = fonte;
         this.doi = doi;
         this.universidade = universidade;

@@ -10,6 +10,7 @@ public class Aluno extends Pessoa {
     private int tempoMulta;
     private String modalidade; // graduação ou pós-graduação
     private ArrayList<Obra> obrasAlugadas;
+    private Pessoa pessoa;
 
     //Construtores
     public Aluno(String nome, long cpf, int registro_aluno, String faculdade,  boolean suspenso, int tempo_multa, String modalidade) {
