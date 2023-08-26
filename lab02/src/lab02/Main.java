@@ -24,23 +24,45 @@ public class Main {
 			    3,                            // numExemplares
 			    0                             // numEmprestados
 			);
-        
+		biblioteca.addObra(livro1);
+		
+		Livro livro2 = new Livro(
+			    biblioteca.getNumLivros(),    // tombo
+			    "9788574803999",              // isbn
+			    "ROM",                        // assunto
+			    "Clásssicos: Dom Casmurro",   // titulo
+			    "Machado de Assis",           // autor
+			    2010,                         // ano
+			    "Rio de Janeiro",             // localDePublicacao
+			    "Português",                  // idioma
+			    401,                          // numDePaginas
+			    2,                            // edicao
+			    "Editora do Saber",           // editora
+			    1,                            // volume
+			    false,                        // ebookStatus
+			    3,                            // numExemplares
+			    0                             // numEmprestados
+			);
+		biblioteca.addObra(livro2);
+		
         Artigo artigo1 = new Artigo(
-                biblioteca.getNumArtigos(), // tombo
+        		biblioteca.getNumArtigos(), // tombo
                 "Bioinfo",      // assunto
                 "Avanços em Sequenciamento de DNA",  // titulo
                 "João Silva",           // autor
                 2023,                   // ano
-                "Campinas",      		// localDePublicacao
                 "Português",            // idioma
-                15,                     // numDePaginas
                 50,                     // numExemplares
                 10,                     // numEmprestados
+                15,                     // numDePaginas
+                "Campinas",      	// localDePublicacao
                 true,                   // ebookStatus
                 "Nature Genetics",      // fonte
                 "10.1234/abcd",         // doi
                 "UNICAMP" 			    // universidade
             );
+        
+        biblioteca.addObra(artigo1);
 
 		Professor prof1 = new Professor("Marcos", 51234714809L, 123456, "IC");
 		
@@ -51,6 +73,7 @@ public class Main {
 		System.out.println("Seja bem vindo(a) à biblioteca " + biblioteca.getNome()+"!");
 		
 		System.out.println(livro1.getRegistro()); 
+		System.out.println(livro2.getRegistro()); 
 		
 		System.out.println(artigo1.getRegistro());
 	}

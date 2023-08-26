@@ -5,9 +5,9 @@ public class ExemplarFisico extends Obra {
     private final String localDePublicacao;
     private boolean ebookStatus;
 
-    public ExemplarFisico(int tombo, String tipo, String assunto, String registro, String titulo, String autor,
-                    int ano, String idioma, int numExemplares, int numEmprestados,
-                          int numDePaginas, String localDePublicacao, boolean ebookStatus) {
+    public ExemplarFisico(int tombo, String tipo, String assunto, String registro, String titulo, 
+    		String autor, int ano, String idioma, int numExemplares, int numEmprestados,
+    		int numDePaginas, String localDePublicacao, boolean ebookStatus) {
         super(tombo, tipo, assunto, registro, titulo, autor, ano, idioma, numExemplares, numEmprestados);
         this.numDePaginas = numDePaginas;
         this.localDePublicacao = localDePublicacao;

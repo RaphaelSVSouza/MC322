@@ -27,4 +27,7 @@ public class Estante {
     public void setNumObras(int numObras) {
         this.numObras = numObras;
     }
+    
+    
+    //Outros métodos
 }

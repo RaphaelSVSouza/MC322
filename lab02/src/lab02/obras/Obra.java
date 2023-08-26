@@ -12,26 +12,18 @@ public class Obra {
     private int numExemplares;
     private int numEmprestados;
 
-    //Construtores
-    public Obra(int tombo, String tipo, String assunto, String registro, String titulo,
-                String autor, int ano, String idioma, int numExemplares, int numEmprestados) {
-        
-    	this.tombo = tombo;
-        
-    	this.tipo = tipo;
+    public Obra(int tombo, String tipo, String assunto, String registro, String titulo, String autor,
+                int ano, String idioma, int numExemplares, int numEmprestados) {
+        this.tombo = tombo;
+        this.tipo = tipo;
         this.assunto = assunto;
-        
         this.registro = registro;
-        
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
-        this.localDePublicacao = localDePublicacao;
         this.idioma = idioma;
-        this.numDePaginas = numDePaginas;
         this.numExemplares = numExemplares;
         this.numEmprestados = numEmprestados;
-        this.ebookStatus = ebookStatus;
     }
 
     public int getTombo() {
@@ -61,17 +53,9 @@ public class Obra {
     public int getAno() {
         return ano;
     }
-    
-    public String getLocalDePublicacao() {
-        return localDePublicacao;
-    }
 
     public String getIdioma() {
         return idioma;
-    }
-
-    public int getNumDePaginas() {
-        return numDePaginas;
     }
 
     public int getNumExemplares() {
@@ -88,14 +72,6 @@ public class Obra {
 
     public void setNumEmprestados(int numEmprestados) {
         this.numEmprestados = numEmprestados;
-    }
-
-    public boolean isEbookStatus() {
-        return ebookStatus;
-    }
-
-    public void setEbookStatus(boolean ebookStatus) {
-        this.ebookStatus = ebookStatus;
     }
 }
 

@@ -1,6 +1,6 @@
 package obras;
 
-public class Livro extends Obra {
+public class Livro extends ExemplarFisico {
     private final String isbn;
     private final int edicao;
     private final String editora;
@@ -11,10 +11,9 @@ public class Livro extends Obra {
                 String autor, int ano, String localDePublicacao, String idioma,
                 int numDePaginas, int edicao, String editora, int volume, 
                 boolean ebookStatus, int numExemplares, int numEmprestados) {
-        super(tombo, "Livro", assunto, 
-        		(assunto + isbn + "-" + tombo), 
-        		titulo, autor, ano, localDePublicacao, idioma,
-              numDePaginas, numExemplares, numEmprestados, ebookStatus);
+        super(tombo, "Livro", assunto, (assunto + isbn + "-" + tombo), titulo, 
+        		autor, ano, idioma, numExemplares, numEmprestados,
+        		numDePaginas, localDePublicacao, ebookStatus);
         this.isbn = isbn;
         this.edicao = edicao;
         this.editora = editora;

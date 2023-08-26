@@ -2,31 +2,28 @@ package biblioteca;
 
 import java.util.ArrayList;
 
-import pessoas.*;
+import obras.Obra;
+import pessoas.Aluno;
+import pessoas.Funcionario;
+import pessoas.Professor;
 
 public class Biblioteca {
 	private final String nome; //nome da biblioteca
-	
 	private Estante[] estantes;
-	//variaveis de controle para gerar o tombo automaticamente:
-	private int numArtigos, numDissertacoes, numLivros, numPeriodicos, numTCCs, numTeses;
-	
-    private ArrayList<Professor> professores;
-    private ArrayList<Aluno> alunos;
-    private ArrayList<Funcionario> funcionarios;
+	private Relatorio relatorio;
     
     // Construtor
     public Biblioteca(String nome, int numEstantes) {
     	this.nome = nome;
+    	
+    	//relação de composição entre Biblioteca e Relatorio
+    	relatorio = new Relatorio(); 
         
+    	//relação de composição entre Biblioteca e Estante
     	estantes = new Estante[numEstantes];
     	for (int i=0; i<numEstantes; i++) {
     		estantes[i] = new Estante();
     	}
-    	
-        this.professores = new ArrayList<Professor>();
-        this.alunos = new ArrayList<Aluno>();
-        this.funcionarios = new ArrayList<Funcionario>();
     }
 
     //Getters & Setters
@@ -34,75 +31,45 @@ public class Biblioteca {
     	return this.nome;
     }
 
-    public ArrayList<Professor> getProfessores() {
-        return this.professores;
-    }
-
-    public void setProfessores(ArrayList<Professor> professores) {
-        this.professores = professores;
-    }
-
-    public ArrayList<Aluno> getAlunos() {
-        return this.alunos;
-    }
-
-    public void setAlunos(ArrayList<Aluno> alunos) {
-        this.alunos = alunos;
-    }
-
-    public ArrayList<Funcionario> getFuncionarios() {
-        return this.funcionarios;
-    }
-
-    public void setFuncionarios(ArrayList<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
     public int getNumArtigos() {
-        return numArtigos;
-    }
-
-    public void setNumArtigos(int numArtigos) {
-        this.numArtigos = numArtigos;
+        return relatorio.getNumArtigos();
     }
 
     public int getNumDissertacoes() {
-        return numDissertacoes;
-    }
-
-    public void setNumDissertacoes(int numDissertacoes) {
-        this.numDissertacoes = numDissertacoes;
+        return relatorio.getNumDissertacoes();
     }
 
     public int getNumLivros() {
-        return numLivros;
-    }
-
-    public void setNumLivros(int numLivros) {
-        this.numLivros = numLivros;
+        return relatorio.getNumLivros();
     }
 
     public int getNumPeriodicos() {
-        return numPeriodicos;
-    }
-
-    public void setNumPeriodicos(int numPeriodicos) {
-        this.numPeriodicos = numPeriodicos;
+        return relatorio.getNumPeriodicos();
     }
 
     public int getNumTCCs() {
-        return numTCCs;
-    }
-
-    public void setNumTCCs(int numTCCs) {
-        this.numTCCs = numTCCs;
+        return relatorio.getNumTCCs();
     }
 
     public int getNumTeses() {
-        return numTeses;
+        return relatorio.getNumTeses();
     }
 
-    public void setNumTeses(int numTeses) {
-        this.numTeses = numTeses;
+    public ArrayList<Professor> getProfessores() {
+        return relatorio.getProfessores();
+    }
+
+    public ArrayList<Aluno> getAlunos() {
+        return relatorio.getAlunos();
+    }
+
+    public ArrayList<Funcionario> getFuncionarios() {
+        return relatorio.getFuncionarios();
+    }
+    
+    
+  	//Outros métodos     
+    public void addObra(Obra obra) {
+    	relatorio.obraAdicionada(obra);
     }
 }

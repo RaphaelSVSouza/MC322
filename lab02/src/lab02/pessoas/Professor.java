@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import obras.Obra;
 
-public class Professor extends Pessoa {
+public class Professor extends Servidor {
     private final int professorRegistro;
     private String instituto;
     private ArrayList<Obra> obrasAlugadas;
 
     // Construtor
     public Professor(String nome, long cpf, int professor_registro, String instituto) {
-        super(nome, cpf);
+        super(nome, cpf, "Professor");
         this.professorRegistro = professor_registro;
         this.instituto = instituto;
         this.obrasAlugadas = new ArrayList<Obra>();

@@ -1,18 +1,16 @@
 package obras;
 
-public class TCC extends Obra {
+public class TCC extends ExemplarFisico {
     private final String universidade;
     private final String cursoDeFormacao;
 
     //Construtores
-    public TCC(int tombo, String assunto, String titulo,
-               String autor, int ano, String localDePublicacao, String idioma,
-               int numDePaginas, int numExemplares, int numEmprestados,
-               boolean ebookStatus, String universidade, String cursoDeFormacao) {
-        super(tombo, "TCC", assunto, 
-        		("TCC" + "/" + universidade + "-" + assunto + tombo), 
-        		titulo, autor, ano, localDePublicacao, idioma,
-              numDePaginas, numExemplares, numEmprestados, ebookStatus);
+    public TCC(int tombo, String tipo, String assunto, String registro, String titulo, 
+    		String autor, int ano, String idioma, int numExemplares, int numEmprestados,
+    		int numDePaginas, String localDePublicacao, boolean ebookStatus, String universidade, String cursoDeFormacao) {
+        super(tombo, "TCC", assunto, ("TCC" + "/" + universidade + "-" + assunto + tombo),
+        		titulo, autor, ano, idioma, numExemplares, numEmprestados,
+        		numDePaginas, localDePublicacao, ebookStatus);
         this.universidade = universidade;
         this.cursoDeFormacao = cursoDeFormacao;
     }
