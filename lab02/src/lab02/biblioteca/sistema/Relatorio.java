@@ -1,5 +1,6 @@
 package biblioteca.sistema;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import obras.*;
@@ -145,6 +146,8 @@ public class Relatorio {
     public Emprestimo realizarEmprestimo(Obra obra, Membros membros) {
         Emprestimo emprestimo = new Emprestimo(obra, membros);
         emprestimos.add(emprestimo); // Adicionar à lista de empréstimos
+        System.out.println( emprestimo.getObra() + " emprestado para " + membros.getNome() +
+                            " até " + emprestimo.getDataDevolucao());
         return emprestimo; // Retorna o empréstimo criado
     }
 
@@ -161,7 +164,20 @@ public class Relatorio {
     public Reserva realizReserva(Obra obra, Membros membros) {
         Reserva reserva = new Reserva(obra, membros);
         reservas.add(reserva);
+        System.out.println( obra.getTitulo() + " foi reservado para" + membros.getNome());
         return reserva;
+    }
+
+    // Registra a renovação
+    public void registrarRenovacao(Emprestimo emprestimo) {
+        Obra obraRenovada = emprestimo.getObra();
+        Membros membroRenovacao = emprestimo.getMembros();
+        LocalDate dataRenovacao = LocalDate.now();
+
+        Renovacao renovacao = new Renovacao(obraRenovada, membroRenovacao, dataRenovacao);
+        emprestimo.getRenovacoes().add(renovacao);
+
+        System.out.println("Renovação registrada");
     }
 
 }

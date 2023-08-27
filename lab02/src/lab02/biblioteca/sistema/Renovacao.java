@@ -1,34 +1,45 @@
 package biblioteca.sistema;
 
 import java.time.LocalDate;
+import obras.Obra;
+import pessoas.Membros.Membros;
 
 public class Renovacao {
 
-    private Emprestimo emprestimo; // relação de agregação entre empréstimo-renovação
+    private Obra obraRenovada;
+    private Membros membroRenovacao;
     private LocalDate dataRenovacao;
 
-    public Renovacao(Emprestimo emprestimo) {
-        this.emprestimo = emprestimo;
-        this.dataRenovacao = LocalDate.now();
+
+    public Renovacao(Obra obraRenovada, Membros membroRenovacao, LocalDate dataRenovacao) {
+        this.obraRenovada = obraRenovada;
+        this.membroRenovacao = membroRenovacao;
+        this.dataRenovacao = dataRenovacao;
     }
 
-    public Emprestimo getEmprestimo() {
-        return this.emprestimo;
+    public Obra getObraRenovada() {
+        return this.obraRenovada;
     }
 
-    public void setEmprestimo(Emprestimo emprestimo) {
-        this.emprestimo = emprestimo;
+    public void setObraRenovada(Obra obraRenovada) {
+        this.obraRenovada = obraRenovada;
+    }
+
+    public Membros getMembroRenovacao() {
+        return this.membroRenovacao;
+    }
+
+    public void setMembroRenovacao(Membros membroRenovacao) {
+        this.membroRenovacao = membroRenovacao;
     }
 
     public LocalDate getDataRenovacao() {
         return this.dataRenovacao;
     }
 
-    public void setDataRenovacao(LocalDate dataRenovcao) {
-        this.dataRenovacao = dataRenovcao;
+    public void setDataRenovacao(LocalDate dataRenovacao) {
+        this.dataRenovacao = dataRenovacao;
     }
-    
-    
 
 
 }
