@@ -1,6 +1,10 @@
 import biblioteca.*;
 import obras.*;
+import obras.fisico.Artigo;
+import obras.fisico.Livro;
 import pessoas.*;
+import pessoas.Membros.Aluno;
+import pessoas.Membros.Professor;
 
 public class Main {
 
