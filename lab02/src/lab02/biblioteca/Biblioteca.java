@@ -2,15 +2,19 @@ package biblioteca;
 
 import java.util.ArrayList;
 
+import biblioteca.sistema.Emprestimo;
+import biblioteca.sistema.Relatorio;
 import obras.Obra;
-import pessoas.Aluno;
 import pessoas.Funcionario;
-import pessoas.Professor;
+import pessoas.Membros.Aluno;
+import pessoas.Membros.Professor;
+import pessoas.Membros.Membros;
 
 public class Biblioteca {
 	private final String nome; //nome da biblioteca
 	private Estante[] estantes;
 	private Relatorio relatorio;
+
     
     // Construtor
     public Biblioteca(String nome, int numEstantes) {
@@ -67,9 +71,18 @@ public class Biblioteca {
         return relatorio.getFuncionarios();
     }
     
-    
+
   	//Outros métodos     
-    public void addObra(Obra obra) {
-    	relatorio.obraAdicionada(obra);
+    public void addObra(Obra obra) { // Adiciona uma obra a biblioteca
+        relatorio.obraAdicionada(obra);
     }
-}
+
+    public void emprestar(Obra obra, Membros membros) { // Empresta uma obra a uma pessoa com a data a ser devolvida
+        relatorio.realizarEmprestimo(obra, membros);
+    }
+
+    public void devolucao(Emprestimo emprestimo) {  // Devolve um item ao acervo da biblioteca, e aplica multa ao membro caso esteja atrasado
+        relatorio.registrarDevolucao(emprestimo);
+    }
+
+}    
