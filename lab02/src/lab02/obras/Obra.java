@@ -1,6 +1,6 @@
 package obras;
 
-public class Obra {
+public class Obra { // Classe Item Multimídia do enunciado
     private final int tombo;
     private final String tipo;
     private final String assunto;
