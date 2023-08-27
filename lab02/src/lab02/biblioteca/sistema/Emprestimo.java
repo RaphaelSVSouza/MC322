@@ -8,11 +8,11 @@ import obras.Obra;
 import pessoas.Membros.Aluno;
 import pessoas.Membros.Membros;
 
-public class Emprestimo {
+public class Emprestimo { 
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
-    private Obra obra;
-    private Membros membros;
+    private Obra obra; // Associação das classes Membros e Obra
+    private Membros membros; 
     private List<Renovacao> renovacoes;
 
 
@@ -111,7 +111,7 @@ public class Emprestimo {
         if (renovacoes.size() < 3) {
             LocalDate newDevolucao = calcularDevolucao(membros);
             dataDevolucao = newDevolucao;
-            renovacoes.add(new Renovacao(this));
+            renovacoes.add(new Renovacao(this.obra, this.membros, LocalDate.now()));
             System.out.println("Item renovado.");
         }
 

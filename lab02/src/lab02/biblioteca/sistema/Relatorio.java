@@ -2,6 +2,7 @@ package biblioteca.sistema;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import obras.*;
 import obras.fisico.Artigo;
@@ -15,7 +16,8 @@ import pessoas.Membros.Aluno;
 import pessoas.Membros.Membros;
 import pessoas.Membros.Professor;
 
-public class Relatorio {
+public class Relatorio { // Associação com as classes atribuídas abaixo
+
 	//variaveis de controle para gerar o tombo automaticamente:
 	private int numArtigos, numDissertacoes, numLivros, numPeriodicos, numTCCs, numTeses;
 	
@@ -125,7 +127,7 @@ public class Relatorio {
     }
     
     
-    //Outros métodos 
+    //Outros métodos
     public void obraAdicionada(Obra obra) {
         if (obra instanceof Artigo) {
             numArtigos++;
@@ -180,4 +182,60 @@ public class Relatorio {
         System.out.println("Renovação registrada");
     }
 
+
+    // Informações sobre empréstimos
+
+    // obtem a quantidade total de empréstimos
+    public int getNumEmprestados() { 
+        return emprestimos.size();
+    }
+
+    // Obtem a lista de todos os emprestimos realizados
+    public List<Emprestimo> getListaEmprestimos() {
+        return emprestimos;
+    }
+
+    // obtem os emprestimso realizados por um determinado membro
+    public List<Emprestimo> getEmprestimosPorMembro(Membros membro) {
+        List<Emprestimo> emprestimosPorMembro = new ArrayList<>();
+        for (Emprestimo emprestimo : emprestimos) {
+            if (emprestimo.getMembros() == membro) {
+                emprestimosPorMembro.add(emprestimo);
+            }
+        }
+        return emprestimosPorMembro;
+    }
+
+    // Informações de renovação
+
+    // Obtem a quantidade total de empréstimos
+    public int getNumRenovacoes() {
+        int getNumRenovacoes = 0;
+        for (Emprestimo emprestimo : emprestimos) {
+            getNumRenovacoes += emprestimo.getRenovacoes().size();
+        }
+        return getNumRenovacoes;
+    }
+
+    // Obtem a lista de todas as renovações registradas
+    public List<Renovacao> getTodasRenovacoes() {
+        List<Renovacao> todRenovacoes = new ArrayList<>();
+        for (Emprestimo emprestimo : emprestimos) {
+            todRenovacoes.addAll(emprestimo.getRenovacoes());
+        }
+        return todRenovacoes;
+    }
+
+    // Obtem todas as renovações de um determinado membro
+    public List<Renovacao> getRenovacoesPorMembro(Membros membro) {
+        List<Renovacao> renovacoesPorMembro = new ArrayList<>();
+        for (Emprestimo emprestimo : emprestimos) {
+            for(Renovacao renovacao: emprestimo.getRenovacoes()) {
+                if (renovacao.getMembroRenovacao() == membro) {
+                    renovacoesPorMembro.add(renovacao);
+                }
+            }
+        }
+        return renovacoesPorMembro;
+    }
 }

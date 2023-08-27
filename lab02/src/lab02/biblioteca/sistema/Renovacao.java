@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import obras.Obra;
 import pessoas.Membros.Membros;
 
-public class Renovacao {
+public class Renovacao { // Associação das classes Membro e Obra
 
     private Obra obraRenovada;
     private Membros membroRenovacao;
