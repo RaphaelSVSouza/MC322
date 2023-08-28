@@ -194,7 +194,7 @@ public class Relatorio { // Associação com as classes atribuídas abaixo
     }
 
     // Realiza reserva
-    public Reserva realizReserva(Obra obra, Membros membros) {
+    public Reserva realizarReserva(Obra obra, Membros membros) {
         Reserva reserva = new Reserva(obra, membros);
         reservas.add(reserva);
         System.out.println( obra.getTitulo() + " foi reservado para" + membros.getNome());
@@ -202,7 +202,7 @@ public class Relatorio { // Associação com as classes atribuídas abaixo
     }
 
     // Registra a renovação
-    public void registrarRenovacao(Emprestimo emprestimo) {
+    public void realizarRenovacao(Emprestimo emprestimo) {
         Obra obraRenovada = emprestimo.getObra();
         Membros membroRenovacao = emprestimo.getMembros();
         LocalDate dataRenovacao = LocalDate.now();

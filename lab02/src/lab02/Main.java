@@ -5,6 +5,7 @@ import obras.fisico.Livro;
 import pessoas.*;
 import pessoas.Membros.Aluno;
 import pessoas.Membros.Professor;
+import biblioteca.sistema.*;
 
 public class Main {
 
@@ -83,6 +84,9 @@ public class Main {
 		System.out.println(livro2.getRegistro()); 
 		
 		System.out.println(artigo1.getRegistro());
+		
+		//empréstimo, renovação e reserva
+		biblioteca.emprestar(livro1, aluno1);
 	}
 
 }
