@@ -1,6 +1,5 @@
 package biblioteca.sistema;
 
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
@@ -9,11 +8,11 @@ import obras.Obra;
 import pessoas.Membros.Aluno;
 import pessoas.Membros.Membros;
 
-public class Emprestimo {
+public class Emprestimo { 
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
-    private Obra obra;
-    private Membros membros;
+    private Obra obra; // Associação das classes Membros e Obra
+    private Membros membros; 
     private List<Renovacao> renovacoes;
 
 
@@ -51,12 +50,20 @@ public class Emprestimo {
         this.obra = obra;
     }
 
-    public Membros getPessoa() {
+    public Membros getMembros() {
         return this.membros;
     }
 
-    public void setPessoa(Membros membros) {
+    public void setMembros(Membros membros) {
         this.membros = membros;
+    }
+
+    public List<Renovacao> getRenovacoes() {
+        return this.renovacoes;
+    }
+
+    public void setRenovacoes(List<Renovacao> renovacoes) {
+        this.renovacoes = renovacoes;
     }
     
 
@@ -94,7 +101,7 @@ public class Emprestimo {
     }
 
     // Método para Renovar um item
-    public void realizarRenovacao(Renovacao renovacao) {
+    public void realizarRenovacao() {
         
         if (membros.isSuspenso()) {
             System.out.println("Pessoa suspensa.");
@@ -102,8 +109,9 @@ public class Emprestimo {
         }
 
         if (renovacoes.size() < 3) {
-            renovacoes.add(new Renovacao(this));
-            renovacao.realizarEmprestimo();
+            LocalDate newDevolucao = calcularDevolucao(membros);
+            dataDevolucao = newDevolucao;
+            renovacoes.add(new Renovacao(this.obra, this.membros, LocalDate.now()));
             System.out.println("Item renovado.");
         }
 

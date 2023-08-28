@@ -4,7 +4,7 @@ import obras.Obra;
 import pessoas.Membros.Membros;
 
 public class Reserva {
-    private Obra obra;
+    private Obra obra; // Associação das classes Membro e Obra
     private Membros membros;
     private boolean reservado;
 
