@@ -1,31 +1,26 @@
 package biblioteca;
 
-import java.util.ArrayList;
-
-import obras.Obra;
-
 public class Estante {
-	private ArrayList<Obra> obras;
-	private int numObras;
+	private int numObrasFisicas;
+	private int numObrasEletronicas;
 	
 	public Estante() {
-		obras = new ArrayList<Obra>();
 	}
-	
-    public ArrayList<Obra> getObras() {
-        return obras;
+
+    public int getNumObrasFisicas() {
+        return numObrasFisicas;
     }
 
-    public void setObras(ArrayList<Obra> obras) {
-        this.obras = obras;
+    public void setNumObrasFisicas(int numObrasFisicas) {
+        this.numObrasFisicas = numObrasFisicas;
+    }
+    
+    public int getNumObrasEletronicas() {
+        return numObrasEletronicas;
     }
 
-    public int getNumObras() {
-        return numObras;
-    }
-
-    public void setNumObras(int numObras) {
-        this.numObras = numObras;
+    public void setNumObrasEletronicas(int numObrasEletronicas) {
+        this.numObrasEletronicas = numObrasEletronicas;
     }
     
     

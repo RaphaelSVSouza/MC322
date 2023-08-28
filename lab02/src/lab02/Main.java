@@ -9,7 +9,7 @@ import pessoas.Membros.Professor;
 public class Main {
 
 	public static void main(String[] args) {
-		Biblioteca biblioteca = new Biblioteca("Cesar Lattes", 100);
+		Biblioteca biblioteca = new Biblioteca("Cesar Lattes", 100, 3);
 
 		Livro livro1 = new Livro(
 				//perceba a associação entre Livro e Biblioteca para receber NumLivros
@@ -29,27 +29,27 @@ public class Main {
 			    3,                            // numExemplares
 			    0                             // numEmprestados
 			);
-		biblioteca.addObra(livro1);
+		biblioteca.addObraFisica(livro1, 0);
 		
 		Livro livro2 = new Livro(
 				//perceba a associação entre Livro e Biblioteca para receber NumLivros
 			    biblioteca.getNumLivros(),    // tombo
-			    "9788574803999",              // isbn
-			    "ROM",                        // assunto
-			    "Clásssicos: Dom Casmurro",   // titulo
-			    "Machado de Assis",           // autor
-			    2010,                         // ano
-			    "Rio de Janeiro",             // localDePublicacao
+			    "9786586253986",              // isbn
+			    "BIO",                        // assunto
+			    "Introdução a Bioinformática",// titulo
+			    "Sergio Russo Matioli",           // autor
+			    2021,                         // ano
+			    "Campinas",             // localDePublicacao
 			    "Português",                  // idioma
-			    401,                          // numDePaginas
-			    2,                            // edicao
-			    "Editora do Saber",           // editora
-			    1,                            // volume
-			    false,                        // ebookStatus
-			    3,                            // numExemplares
+			    176,                          // numDePaginas
+			    1,                            // edicao
+			    "UNICAMP",           // editora
+			    3,                            // volume
+			    true,                        // ebookStatus
+			    1,                            // numExemplares
 			    0                             // numEmprestados
 			);
-		biblioteca.addObra(livro2);
+		biblioteca.addObraFisica(livro2, 0);
 		
         Artigo artigo1 = new Artigo(
         		//perceba a associação entre Livro e Biblioteca para receber NumArtigos
@@ -59,7 +59,7 @@ public class Main {
                 "João Silva",           // autor
                 2023,                   // ano
                 "Português",            // idioma
-                50,                     // numExemplares
+                10,                     // numExemplares
                 10,                     // numEmprestados
                 15,                     // numDePaginas
                 "Campinas",      	// localDePublicacao
@@ -69,11 +69,11 @@ public class Main {
                 "UNICAMP" 			    // universidade
             );
         
-        biblioteca.addObra(artigo1);
+        biblioteca.addObraFisica(artigo1, 80);
 
 		Professor prof1 = new Professor("Marcos", 51234714809L, 123456, "IC");
 		
-		Aluno aluno1 = new Aluno("Leticia", 32992907898L, 254175, "IFGW", false, 0, "Graduação");
+		Aluno aluno1 = new Aluno("Leticia", 32992907898L, 254175, "IFGW", 0, "Graduação");
 
 		Funcionario func1 = new Funcionario("Luciano", 93297242809L, "gerente");
 		

@@ -3,8 +3,8 @@ package biblioteca.sistema;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 import obras.*;
+import obras.eletronico.*;
 import obras.fisico.Artigo;
 import obras.fisico.Dissertacao;
 import obras.fisico.Livro;
@@ -19,7 +19,8 @@ import pessoas.Membros.Professor;
 public class Relatorio { // Associação com as classes atribuídas abaixo
 
 	//variaveis de controle para gerar o tombo automaticamente:
-	private int numArtigos, numDissertacoes, numLivros, numPeriodicos, numTCCs, numTeses;
+	private int numArtigos, numDissertacoes, numLivros, numPeriodicos, numTCCs, numTeses,
+	numCDaudio, numDVDvideo, numEbook;
 	
     private ArrayList<Professor> professores;
     private ArrayList<Aluno> alunos;
@@ -85,6 +86,30 @@ public class Relatorio { // Associação com as classes atribuídas abaixo
     public void setNumTeses(int numTeses) {
         this.numTeses = numTeses;
     }
+    
+    public int getNumCDaudio() {
+        return numCDaudio;
+    }
+
+    public void setNumCDaudio(int numCDaudio) {
+        this.numCDaudio = numCDaudio;
+    }
+
+    public int getNumDVDvideo() {
+        return numDVDvideo;
+    }
+
+    public void setNumDVDvideo(int numDVDvideo) {
+        this.numDVDvideo = numDVDvideo;
+    }
+
+    public int getNumEbook() {
+        return numEbook;
+    }
+
+    public void setNumEbook(int numEbook) {
+        this.numEbook = numEbook;
+    }
 
     public ArrayList<Professor> getProfessores() {
         return this.professores;
@@ -141,6 +166,12 @@ public class Relatorio { // Associação com as classes atribuídas abaixo
             numTCCs++;
         } else if (obra instanceof Tese) {
             numTeses++;
+        } else if (obra instanceof CDaudio) {
+            numCDaudio++;		
+        } else if (obra instanceof DVDvideo) {
+            numDVDvideo++;
+        } else if (obra instanceof Ebook) {
+            numEbook++;
         }
     }
     
