@@ -105,8 +105,8 @@ public class Biblioteca {
     	relatorio.obraAdicionada(obra);
     }
 
-    public void emprestar(Obra obra, Membros membros) { // Empresta uma obra a uma pessoa com a data a ser devolvida
-        relatorio.realizarEmprestimo(obra, membros);
+    public Emprestimo emprestar(Obra obra, Membros membros) { // Empresta uma obra a uma pessoa com a data a ser devolvida
+        return relatorio.realizarEmprestimo(obra, membros);
     }
 
     public void devolucao(Emprestimo emprestimo) {  // Devolve um item ao acervo da biblioteca, e aplica multa ao membro caso esteja atrasado

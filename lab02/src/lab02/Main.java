@@ -11,6 +11,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Biblioteca biblioteca = new Biblioteca("Cesar Lattes", 100, 3);
+		System.out.println("Seja bem vindo(a) à biblioteca " + biblioteca.getNome()+"!");
 
 		Livro livro1 = new Livro(
 				//perceba a associação entre Livro e Biblioteca para receber NumLivros
@@ -77,16 +78,13 @@ public class Main {
 		Aluno aluno1 = new Aluno("Leticia", 32992907898L, 254175, "IFGW", 0, "Graduação");
 
 		Funcionario func1 = new Funcionario("Luciano", 93297242809L, "gerente");
-		
-		System.out.println("Seja bem vindo(a) à biblioteca " + biblioteca.getNome()+"!");
-		
+			
+		System.out.println("Algumas obras:");
 		System.out.println(livro1.getRegistro()); 
 		System.out.println(livro2.getRegistro()); 
-		
 		System.out.println(artigo1.getRegistro());
 		
-		//empréstimo, renovação e reserva
-		biblioteca.emprestar(livro1, aluno1);
+		Emprestimo emprestimo1 = biblioteca.emprestar(livro1, aluno1);
 	}
 
 }
