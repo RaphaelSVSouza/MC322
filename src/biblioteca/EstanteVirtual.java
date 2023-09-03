@@ -4,16 +4,16 @@ import obras.Obra;
 import java.util.ArrayList;
 
 public class EstanteVirtual extends Estante {	
-	ArrayList<Obra> obrasEletronicas;
+	ArrayList<Obra> urls;
 	
 	//Construtor
 	public EstanteVirtual() {
-		obrasEletronicas = new ArrayList<Obra>();
+		urls = new ArrayList<Obra>();
 	}
 	
 	//Outros métodos
     public void addObraEletronica(Obra obra){
-    	obrasEletronicas.add(obra);
-    	setNumObrasEletronicas(getNumObrasEletronicas()+1);
+    	urls.add(obra);
+    	setNumObras(getNumObras()+1);
     }
 }

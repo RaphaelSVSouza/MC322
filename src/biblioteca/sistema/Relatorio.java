@@ -11,10 +11,10 @@ import obras.fisico.Livro;
 import obras.fisico.Periodico;
 import obras.fisico.TCC;
 import obras.fisico.Tese;
+import pessoas.Aluno;
 import pessoas.Funcionario;
-import pessoas.Membros.Aluno;
-import pessoas.Membros.Membros;
-import pessoas.Membros.Professor;
+import pessoas.Membros;
+import pessoas.Professor;
 
 public class Relatorio { // Associação com as classes atribuídas abaixo
 

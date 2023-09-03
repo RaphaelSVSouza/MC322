@@ -5,8 +5,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import obras.Obra;
-import pessoas.Membros.Aluno;
-import pessoas.Membros.Membros;
+import pessoas.Aluno;
+import pessoas.Membros;
 
 public class Emprestimo { 
     private LocalDate dataEmprestimo;

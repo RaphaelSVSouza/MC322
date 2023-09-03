@@ -1,7 +1,7 @@
 package biblioteca.sistema;
 
 import obras.Obra;
-import pessoas.Membros.Membros;
+import pessoas.Membros;
 
 public class Reserva {
     private Obra obra; // Associação das classes Membro e Obra

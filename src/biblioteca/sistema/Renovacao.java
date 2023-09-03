@@ -2,7 +2,7 @@ package biblioteca.sistema;
 
 import java.time.LocalDate;
 import obras.Obra;
-import pessoas.Membros.Membros;
+import pessoas.Membros;
 
 public class Renovacao { // Associação das classes Membro e Obra
 

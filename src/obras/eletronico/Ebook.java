@@ -1,40 +1,63 @@
 package obras.eletronico;
 
-public class Ebook extends ExemplarEletronico {
-    private final String isbn;
-    private final int edicao;
-    private final String editora;
-    private final int volume;
-	
-	//Construtor
-	public Ebook(int tombo, String tipo, String assunto, String registro, String titulo, String autor, 
-			     int ano, String idioma, int numExemplares, int numEmprestados, int megabytesDoArquivo,
-			     String isbn, int edicao, String editora, int volume) {
-		super(tombo, tipo, assunto, registro, titulo, autor, ano, idioma,
-			  numExemplares, numEmprestados, megabytesDoArquivo);
-        this.isbn = isbn;
-        this.edicao = edicao;
-        this.editora = editora;
-        this.volume = volume;
-	}
-	
-	//Getters & Setters
-    public String getIsbn() {
-        return isbn;
+import obras.Obra;
+import java.util.List;
+
+public class Ebook extends Obra {
+    private final String formato;
+    private final int numTotalLicencas;
+    private final String formatoDeArquivo;
+    private String urlAcesso;
+    private List<String> requisitosDeLeitura;
+    private String dataDisponibilidade;
+
+    public Ebook(String titulo, String autor, String editora, int ano, String genero, 
+    		String sinopse, String capa_path, 
+    		String formato, int numTotalLicencas, String formatoDeArquivo, String urlAcesso,
+                 List<String> requisitosDeLeitura, String dataDisponibilidade) {
+    	super(titulo, autor, editora, ano, genero, sinopse, capa_path);
+        this.formato = formato;
+        this.numTotalLicencas = numTotalLicencas;
+        this.formatoDeArquivo = formatoDeArquivo;
+        this.urlAcesso = urlAcesso;
+        this.requisitosDeLeitura = requisitosDeLeitura;
+        this.dataDisponibilidade = dataDisponibilidade;
     }
 
-    public int getEdicao() {
-        return edicao;
+    public String getFormato() {
+        return formato;
     }
 
-    public String getEditora() {
-        return editora;
+    public int getNumTotalLicencas() {
+        return numTotalLicencas;
     }
 
-    public int getVolume() {
-        return volume;
+    public String getFormatoDeArquivo() {
+        return formatoDeArquivo;
+    }	
+
+    public String getUrlAcesso() {
+        return urlAcesso;
     }
-    
-    //Outros métodos
-    
+
+    public void setUrlAcesso(String urlAcesso) {
+        this.urlAcesso = urlAcesso;
+    }
+
+    public List<String> getRequisitosDeLeitura() {
+        return requisitosDeLeitura;
+    }
+
+    public void setRequisitosDeLeitura(List<String> requisitosDeLeitura) {
+        this.requisitosDeLeitura = requisitosDeLeitura;
+    }
+
+    public String getDataDisponibilidade() {
+        return dataDisponibilidade;
+    }
+
+    public void setDataDisponibilidade(String dataDisponibilidade) {
+        this.dataDisponibilidade = dataDisponibilidade;
+    }
 }
+

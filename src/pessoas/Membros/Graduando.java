@@ -1,10 +1,8 @@
 package pessoas.Membros;
 
-public class Graduando extends Aluno {
-	
-	
-	
-	public Graduando(String nome, long cpf, int registro_aluno, String faculdade,  boolean suspenso, int tempo_multa, String modalidade) {
-		super(nome, cpf, registro_aluno, faculdade, tempo_multa, modalidade);
+public class Graduando extends Membro {
+	public Graduando(String nome, long idFaculdade, String endereco, String contato,
+			String dataDeRegistro) {
+		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
 	}
 }
