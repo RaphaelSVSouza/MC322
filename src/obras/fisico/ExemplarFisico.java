@@ -8,10 +8,10 @@ public class ExemplarFisico extends Obra {
 	private Estado conservacao;
 	
 	//construtor
-    public ExemplarFisico(String titulo, String autor, String editora, int ano, String genero,
+    public ExemplarFisico(String titulo, String autor, String editora, int ano,
     		String sinopse, String capa_path,
     		int numTotalCopias, int numCopiasDisponiveis, Estado conservacao) {
-        super(titulo, autor, editora, ano, genero, sinopse, capa_path);
+        super(titulo, autor, editora, ano, sinopse, capa_path);
         this.numTotalCopias = numTotalCopias;
         this.numCopiasDisponiveis = numCopiasDisponiveis;
         this.conservacao = conservacao;

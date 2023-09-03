@@ -6,19 +6,25 @@ public class DVDvideo extends ExemplarFisico {
 	private final List<String> elenco;
 	private final int duracao; //em minutos
 	private String legendaEaudios_path; 
+	private final GeneroFilme genero;
 	
-	public DVDvideo(String titulo, String autor, String editora, int ano, String genero,
+	public DVDvideo(String titulo, String autor, String editora, int ano, GeneroFilme genero,
     		String sinopse, String capa_path,
     		int numTotalCopias, int numCopiasDisponiveis, Estado conservacao,
     		List<String> elenco, int duracao, String legendaEaudios_path) {
-		super(titulo, autor, editora, ano, genero, sinopse, capa_path,
+		super(titulo, autor, editora, ano, sinopse, capa_path,
         		numTotalCopias, numCopiasDisponiveis, conservacao);
 		this.elenco = elenco;
 		this.duracao = duracao;
 		this.legendaEaudios_path = legendaEaudios_path;
+		this.genero = genero;
 	}
 	
 	// getters & setters
+    public GeneroFilme getGenero() {
+        return genero;
+    }
+	
 	public List<String> getElenco() {
 	    return elenco;
 	}

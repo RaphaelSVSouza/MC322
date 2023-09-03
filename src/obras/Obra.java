@@ -10,17 +10,15 @@ public class Obra { // Classe Item Multimídia do enunciado
     private final String autor;
     private final String editora;
     private final int ano;
-    private final String genero;
     private final String sinopse;
     private BufferedImage capa;
 
-    public Obra(String titulo, String autor, String editora, int ano, String genero, 
+    public Obra(String titulo, String autor, String editora, int ano, 
     		String sinopse, String capa_path) {
         this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
-        this.genero = genero;
         this.sinopse = sinopse;
         
         try {
@@ -49,10 +47,6 @@ public class Obra { // Classe Item Multimídia do enunciado
 
     public int getAno() {
         return ano;
-    }
-
-    public String getGenero() {
-        return genero;
     }
 
     public String getSinopse() {

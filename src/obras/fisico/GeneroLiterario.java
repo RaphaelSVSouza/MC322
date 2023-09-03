@@ -1,4 +1,4 @@
-package obras;
+package obras.fisico;
 
 public enum GeneroLiterario {
 	//11 generos literarios, um pra cada estante a princípio
