@@ -3,10 +3,38 @@ package pessoas.Funcionarios;
 import pessoas.Pessoa;
 
 public class Funcionario extends Pessoa implements AtividadesBasicas{
+    static private int maxEmprestimos = 4;
+    static private int prazoDevolucao = 20;
+    static private double multaAtraso = 0.75;
+	
 	public Funcionario(String nome, long idFaculdade, String endereco, String contato,
 			String dataDeRegistro) {
 		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
 	}
+	
+	public static int getMaxEmprestimos() {
+        return maxEmprestimos;
+    }
+
+    public static void setMaxEmprestimos(int maxEmprestimos) {
+    	Funcionario.maxEmprestimos = maxEmprestimos;
+    }
+
+    public static int getPrazoDevolucao() {
+        return prazoDevolucao;
+    }
+
+    public static void setPrazoDevolucao(int prazoDevolucao) {
+    	Funcionario.prazoDevolucao = prazoDevolucao;
+    }
+
+    public static double getMultaAtraso() {
+        return multaAtraso;
+    }
+
+    public static void setMultaAtraso(double multaAtraso) {
+    	Funcionario.multaAtraso = multaAtraso;
+    }
 
 	@Override
 	public void realizarEmprestimo() {

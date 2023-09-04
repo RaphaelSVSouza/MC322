@@ -1,16 +1,16 @@
 package biblioteca.sistema;
 
 import obras.Obra;
-import pessoas.Membros;
+import pessoas.Pessoa;
 
 public class Reserva {
-    private Obra obra; // Associação das classes Membro e Obra
-    private Membros membros;
+    private Obra obra; 
+    private Pessoa pessoa;
     private boolean reservado;
 
-    public Reserva(Obra obra, Membros membros) {
+    public Reserva(Obra obra, Pessoa pessoa) {
         this.obra = obra;
-        this.membros = membros;
+        this.pessoa = pessoa;
         this.reservado = true;
     }
 
@@ -22,12 +22,12 @@ public class Reserva {
         this.obra = obra;
     }
 
-    public Membros getMembros() {
-        return this.membros;
+    public Pessoa getMembros() {
+        return this.pessoa;
     }
 
-    public void setPessoa(Membros membros) {
-        this.membros = membros;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
 
     public boolean isReservado() {

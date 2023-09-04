@@ -2,6 +2,7 @@ package obras.eletronico;
 
 import obras.Obra;
 import java.util.List;
+import obras.fisico.GeneroLiterario;
 
 public class Ebook extends Obra {
     private final String formato;
@@ -10,20 +11,27 @@ public class Ebook extends Obra {
     private String urlAcesso;
     private List<String> requisitosDeLeitura;
     private String dataDisponibilidade;
+    private final GeneroLiterario genero;
 
-    public Ebook(String titulo, String autor, String editora, int ano, String genero, 
+    public Ebook(String titulo, String autor, String editora, int ano, GeneroLiterario genero, 
     		String sinopse, String capa_path, 
     		String formato, int numTotalLicencas, String formatoDeArquivo, String urlAcesso,
                  List<String> requisitosDeLeitura, String dataDisponibilidade) {
-    	super(titulo, autor, editora, ano, genero, sinopse, capa_path);
+    	super(titulo, autor, editora, ano, sinopse, capa_path);
         this.formato = formato;
         this.numTotalLicencas = numTotalLicencas;
         this.formatoDeArquivo = formatoDeArquivo;
         this.urlAcesso = urlAcesso;
         this.requisitosDeLeitura = requisitosDeLeitura;
         this.dataDisponibilidade = dataDisponibilidade;
+        this.genero = genero;
     }
 
+    
+    public GeneroLiterario getGenero() {
+    	return genero;
+    }
+    
     public String getFormato() {
         return formato;
     }

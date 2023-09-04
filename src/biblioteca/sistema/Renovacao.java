@@ -2,18 +2,17 @@ package biblioteca.sistema;
 
 import java.time.LocalDate;
 import obras.Obra;
-import pessoas.Membros;
+import pessoas.Pessoa;
 
 public class Renovacao { // Associação das classes Membro e Obra
 
     private Obra obraRenovada;
-    private Membros membroRenovacao;
+    private Pessoa pessoaRenovacao;
     private LocalDate dataRenovacao;
 
-
-    public Renovacao(Obra obraRenovada, Membros membroRenovacao, LocalDate dataRenovacao) {
+    public Renovacao(Obra obraRenovada, Pessoa pessoaRenovacao, LocalDate dataRenovacao) {
         this.obraRenovada = obraRenovada;
-        this.membroRenovacao = membroRenovacao;
+        this.pessoaRenovacao = pessoaRenovacao;
         this.dataRenovacao = dataRenovacao;
     }
 
@@ -25,12 +24,12 @@ public class Renovacao { // Associação das classes Membro e Obra
         this.obraRenovada = obraRenovada;
     }
 
-    public Membros getMembroRenovacao() {
-        return this.membroRenovacao;
+    public Pessoa getPessoaRenovacao() {
+        return this.pessoaRenovacao;
     }
 
-    public void setMembroRenovacao(Membros membroRenovacao) {
-        this.membroRenovacao = membroRenovacao;
+    public void setMembroRenovacao(Pessoa membroRenovacao) {
+        this.pessoaRenovacao = membroRenovacao;
     }
 
     public LocalDate getDataRenovacao() {
