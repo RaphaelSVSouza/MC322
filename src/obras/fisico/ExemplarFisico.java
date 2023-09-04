@@ -3,32 +3,42 @@ package obras.fisico;
 import obras.Obra;
 
 public class ExemplarFisico extends Obra {
-    private final int numDePaginas;
-    private final String localDePublicacao;
-    private boolean ebookStatus;
-
-    public ExemplarFisico(int tombo, String tipo, String assunto, String registro, String titulo, 
-    		String autor, int ano, String idioma, int numExemplares, int numEmprestados,
-    		int numDePaginas, String localDePublicacao, boolean ebookStatus) {
-        super(tombo, tipo, assunto, registro, titulo, autor, ano, idioma, numExemplares, numEmprestados);
-        this.numDePaginas = numDePaginas;
-        this.localDePublicacao = localDePublicacao;
-        this.ebookStatus = ebookStatus;
+	private int numTotalCopias;
+	private int numCopiasDisponiveis;
+	private Estado conservacao;
+	
+	//construtor
+    public ExemplarFisico(String titulo, String autor, String editora, int ano,
+    		String sinopse, String capa_path,
+    		int numTotalCopias, int numCopiasDisponiveis, Estado conservacao) {
+        super(titulo, autor, editora, ano, sinopse, capa_path);
+        this.numTotalCopias = numTotalCopias;
+        this.numCopiasDisponiveis = numCopiasDisponiveis;
+        this.conservacao = conservacao;
     }
     
-    public int getNumDePaginas() {
-        return numDePaginas;
+    //getters & setters
+    public int getNumTotalCopias() {
+        return numTotalCopias;
     }
 
-    public String getLocalDePublicacao() {
-        return localDePublicacao;
+    public void setNumTotalCopias(int numTotalCopias) {
+        this.numTotalCopias = numTotalCopias;
     }
 
-    public boolean isEbookStatus() {
-        return ebookStatus;
+    public int getNumCopiasDisponiveis() {
+        return numCopiasDisponiveis;
     }
 
-    public void setEbookStatus(boolean ebookStatus) {
-        this.ebookStatus = ebookStatus;
+    public void setNumCopiasDisponiveis(int numCopiasDisponiveis) {
+        this.numCopiasDisponiveis = numCopiasDisponiveis;
+    }
+
+    public Estado getConservacao() {
+        return conservacao;
+    }
+
+    public void setConservacao(Estado conservacao) {
+        this.conservacao = conservacao;
     }
 }

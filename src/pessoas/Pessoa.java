@@ -1,15 +1,20 @@
 package pessoas;
 
-public class Pessoa {
+public abstract class Pessoa {
     private final String nome;
-    private final long cpf;
-
-
+    private final long idFaculdade;
+    private final String endereco;
+    private final String contato;
+    private final String dataDeRegistro;
 
     // Construtor
-    public Pessoa(String nome, long cpf) {
+    public Pessoa(String nome, long idFaculdade, String endereco, String contato,
+    		String dataDeRegistro) {
         this.nome = nome;
-        this.cpf = cpf;
+        this.idFaculdade = idFaculdade;
+        this.endereco = endereco;
+        this.contato = contato;
+        this.dataDeRegistro = dataDeRegistro;
     }
     
     //Getters & Setters
@@ -17,14 +22,19 @@ public class Pessoa {
         return nome;
     }
     
-    public long getCPF() {
-        return cpf;
+    public long getIdFaculdade() {
+        return idFaculdade;
     }
-
-    public long getCpf() {
-        return this.cpf;
+    
+    public String getEndereco() {
+    	return endereco;
     }
-
-
-   
+    
+    public String getContato() {
+    	return contato;
+    }
+    
+    public String getDataDeRegistro() {
+    	return dataDeRegistro;
+    }
 }

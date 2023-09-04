@@ -1,47 +1,38 @@
 package obras;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 public class Obra { // Classe Item Multimídia do enunciado
-    private final int tombo;
-    private final String tipo;
-    private final String assunto;
-    private final String registro;
     private final String titulo;
     private final String autor;
+    private final String editora;
     private final int ano;
-    private final String idioma;
-    private int numExemplares;
-    private int numEmprestados;
+    private final String sinopse;
+    private BufferedImage capa;
 
-    public Obra(int tombo, String tipo, String assunto, String registro, String titulo, String autor,
-                int ano, String idioma, int numExemplares, int numEmprestados) {
-        this.tombo = tombo;
-        this.tipo = tipo;
-        this.assunto = assunto;
-        this.registro = registro;
+    public Obra(String titulo, String autor, String editora, int ano, 
+    		String sinopse, String capa_path) {
         this.titulo = titulo;
         this.autor = autor;
+        this.editora = editora;
         this.ano = ano;
-        this.idioma = idioma;
-        this.numExemplares = numExemplares;
-        this.numEmprestados = numEmprestados;
+        this.sinopse = sinopse;
+        
+        try {
+            // Carregar a imagem em uma variável BufferedImage
+        	capa = ImageIO.read(new File(capa_path));
+
+            // Agora você tem a imagem na variável "imagem" e pode usá-la como desejar
+            // Por exemplo, você pode exibi-la em um JFrame, desenhá-la em um componente, etc.
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public int getTombo() {
-        return tombo;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getAssunto() {
-        return assunto;
-    }
-
-    public String getRegistro() {
-        return registro;
-    }
-
+    // Getters & Setters
     public String getTitulo() {
         return titulo;
     }
@@ -50,28 +41,20 @@ public class Obra { // Classe Item Multimídia do enunciado
         return autor;
     }
 
+    public String getEditora() {
+        return editora;
+    }
+
     public int getAno() {
         return ano;
     }
 
-    public String getIdioma() {
-        return idioma;
+    public String getSinopse() {
+        return sinopse;
     }
 
-    public int getNumExemplares() {
-        return numExemplares;
-    }
-
-    public void setNumExemplares(int numExemplares) {
-        this.numExemplares = numExemplares;
-    }
-
-    public int getNumEmprestados() {
-        return numEmprestados;
-    }
-
-    public void setNumEmprestados(int numEmprestados) {
-        this.numEmprestados = numEmprestados;
+    public BufferedImage getCapa() {
+    	return capa;
     }
 }
 

@@ -1,41 +1,36 @@
 package pessoas.Membros;
 
-import java.util.ArrayList;
-
-import obras.Obra;
-
-public class Professor extends Membros {
-    private final int professorRegistro;
-    private String instituto;
-    private ArrayList<Obra> obrasAlugadas;
-
-    // Construtor
-    public Professor(String nome, long cpf, int professor_registro, String instituto) {
-        super(nome, cpf);
-        this.professorRegistro = professor_registro;
-        this.instituto = instituto;
-        this.obrasAlugadas = new ArrayList<Obra>();
+public class Professor extends Membro {
+    static private int maxEmprestimos = 7;
+    static private int prazoDevolucao = 30;
+    static private double multaAtraso = 0.50;
+	
+	public Professor(String nome, long idFaculdade, String endereco, String contato,
+			String dataDeRegistro) {
+		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
+	}
+	
+	public static int getMaxEmprestimos() {
+        return maxEmprestimos;
     }
 
-    // Getters & Setters
-    public int getProfessor_registro() {
-        return this.professorRegistro;
+    public static void setMaxEmprestimos(int maxEmprestimos) {
+    	Professor.maxEmprestimos = maxEmprestimos;
     }
 
-    public String getInstituto() {
-        return this.instituto;
+    public static int getPrazoDevolucao() {
+        return prazoDevolucao;
     }
 
-    public void setInstituto(String instituto) {
-        this.instituto = instituto;
+    public static void setPrazoDevolucao(int prazoDevolucao) {
+    	Professor.prazoDevolucao = prazoDevolucao;
     }
 
-    public ArrayList<Obra> getObrasAlugadas() {
-        return this.obrasAlugadas;
+    public static double getMultaAtraso() {
+        return multaAtraso;
     }
 
-    public void setLivros_alugados(ArrayList<Obra> livros_alugados) {
-        this.obrasAlugadas = livros_alugados;
+    public static void setMultaAtraso(double multaAtraso) {
+    	Professor.multaAtraso = multaAtraso;
     }
-
 }
