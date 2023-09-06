@@ -1,14 +1,14 @@
 package biblioteca.sistema;
 
+import membros.Membro;
 import obras.Obra;
-import pessoas.Pessoa;
 
 public class Reserva {
     private Obra obra; 
-    private Pessoa pessoa;
+    private Membro pessoa;
     private boolean reservado;
 
-    public Reserva(Obra obra, Pessoa pessoa) {
+    public Reserva(Obra obra, Membro pessoa) {
         this.obra = obra;
         this.pessoa = pessoa;
         this.reservado = true;
@@ -22,11 +22,11 @@ public class Reserva {
         this.obra = obra;
     }
 
-    public Pessoa getMembros() {
+    public Membro getMembros() {
         return this.pessoa;
     }
 
-    public void setPessoa(Pessoa pessoa) {
+    public void setPessoa(Membro pessoa) {
         this.pessoa = pessoa;
     }
 

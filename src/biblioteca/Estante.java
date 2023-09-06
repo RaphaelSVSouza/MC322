@@ -1,6 +1,6 @@
 package biblioteca;
 
-public class Estante {
+public abstract class Estante {
 	private int numObras;
 	
 	public Estante() {

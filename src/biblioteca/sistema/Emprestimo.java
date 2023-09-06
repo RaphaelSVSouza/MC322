@@ -2,20 +2,21 @@ package biblioteca.sistema;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import membros.*;
+import membros.Academico.*;
+import membros.Funcionarios.*;
 import obras.Obra;
-import pessoas.*;
-import pessoas.Membros.*;
-import pessoas.Funcionarios.*;
 
 public class Emprestimo { 
     private final LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private final Obra obra;
-    private final Pessoa pessoa; 
+    private final Membro pessoa; 
     private List<Renovacao> renovacoes;
 
     // Construtor
-    public Emprestimo(Obra obra, Pessoa pessoa, LocalDate dataEmprestimo) {
+    public Emprestimo(Obra obra, Membro pessoa, LocalDate dataEmprestimo) {
         this.dataEmprestimo = LocalDate.now();
         
         if (pessoa instanceof Graduando) {
@@ -34,7 +35,7 @@ public class Emprestimo {
 
 
     // Getters & Setters
-    public Pessoa getPessoaEmprestimo() {
+    public Membro getPessoaEmprestimo() {
         return this.pessoa;
     }
     

@@ -1,11 +1,11 @@
-package pessoas.Membros;
+package membros.Academico;
 
-public class Professor extends Membro {
-    static private int maxEmprestimos = 7;
-    static private int prazoDevolucao = 30;
-    static private double multaAtraso = 0.50;
+public class Graduando extends Academico {
+	static private int maxEmprestimos = 3;
+    static private int prazoDevolucao = 15;
+    static private double multaAtraso = 1.00;
 	
-	public Professor(String nome, long idFaculdade, String endereco, String contato,
+	public Graduando(String nome, long idFaculdade, String endereco, String contato,
 			String dataDeRegistro) {
 		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
 	}
@@ -15,7 +15,7 @@ public class Professor extends Membro {
     }
 
     public static void setMaxEmprestimos(int maxEmprestimos) {
-    	Professor.maxEmprestimos = maxEmprestimos;
+    	Graduando.maxEmprestimos = maxEmprestimos;
     }
 
     public static int getPrazoDevolucao() {
@@ -23,7 +23,7 @@ public class Professor extends Membro {
     }
 
     public static void setPrazoDevolucao(int prazoDevolucao) {
-    	Professor.prazoDevolucao = prazoDevolucao;
+    	Graduando.prazoDevolucao = prazoDevolucao;
     }
 
     public static double getMultaAtraso() {
@@ -31,6 +31,6 @@ public class Professor extends Membro {
     }
 
     public static void setMultaAtraso(double multaAtraso) {
-    	Professor.multaAtraso = multaAtraso;
+    	Graduando.multaAtraso = multaAtraso;
     }
 }

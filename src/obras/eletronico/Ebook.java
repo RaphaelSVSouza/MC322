@@ -3,6 +3,7 @@ package obras.eletronico;
 import obras.Obra;
 import java.util.List;
 import obras.fisico.GeneroLiterario;
+import java.time.LocalDate;
 
 public class Ebook extends Obra {
     private final String formato;
@@ -10,13 +11,13 @@ public class Ebook extends Obra {
     private final String formatoDeArquivo;
     private String urlAcesso;
     private List<String> requisitosDeLeitura;
-    private String dataDisponibilidade;
+    private LocalDate dataDisponibilidade;
     private final GeneroLiterario genero;
 
     public Ebook(String titulo, String autor, String editora, int ano, GeneroLiterario genero, 
     		String sinopse, String capa_path, 
     		String formato, int numTotalLicencas, String formatoDeArquivo, String urlAcesso,
-                 List<String> requisitosDeLeitura, String dataDisponibilidade) {
+                 List<String> requisitosDeLeitura, LocalDate dataDisponibilidade) {
     	super(titulo, autor, editora, ano, sinopse, capa_path);
         this.formato = formato;
         this.numTotalLicencas = numTotalLicencas;
@@ -60,11 +61,11 @@ public class Ebook extends Obra {
         this.requisitosDeLeitura = requisitosDeLeitura;
     }
 
-    public String getDataDisponibilidade() {
+    public LocalDate getDataDisponibilidade() {
         return dataDisponibilidade;
     }
 
-    public void setDataDisponibilidade(String dataDisponibilidade) {
+    public void setDataDisponibilidade(LocalDate dataDisponibilidade) {
         this.dataDisponibilidade = dataDisponibilidade;
     }
 }

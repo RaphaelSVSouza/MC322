@@ -2,7 +2,7 @@ package obras.fisico;
 
 import obras.Obra;
 
-public class ExemplarFisico extends Obra {
+public abstract class ExemplarFisico extends Obra {
 	private int numTotalCopias;
 	private int numCopiasDisponiveis;
 	private Estado conservacao;

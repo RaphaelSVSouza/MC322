@@ -1,6 +1,6 @@
-package pessoas.Membros;
+package membros.Academico;
 
-public class PosGraduando extends Membro {
+public class PosGraduando extends Academico {
     static private int maxEmprestimos = 5;
     static private int prazoDevolucao = 20;
     static private double multaAtraso = 1.00;

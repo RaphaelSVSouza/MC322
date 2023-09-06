@@ -1,6 +1,6 @@
-package pessoas;
+package membros;
 
-public abstract class Pessoa {
+public abstract class Membro {
     private final String nome;
     private final long idFaculdade;
     private final String endereco;
@@ -8,7 +8,7 @@ public abstract class Pessoa {
     private final String dataDeRegistro;
 
     // Construtor
-    public Pessoa(String nome, long idFaculdade, String endereco, String contato,
+    public Membro(String nome, long idFaculdade, String endereco, String contato,
     		String dataDeRegistro) {
         this.nome = nome;
         this.idFaculdade = idFaculdade;
