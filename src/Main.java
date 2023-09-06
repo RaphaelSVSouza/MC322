@@ -1,8 +1,8 @@
 import biblioteca.*;
 import obras.*;
 import obras.fisico.*;
-import pessoas.*;
 import biblioteca.sistema.*;
+import membros.*;
 
 public class Main {
 

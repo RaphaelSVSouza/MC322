@@ -1,8 +1,8 @@
-package pessoas.Funcionarios;
+package membros.Funcionarios;
 
-import pessoas.Pessoa;
+import membros.Membro;
 
-public class Funcionario extends Pessoa implements AtividadesBasicas{
+public abstract class Funcionario extends Membro implements Atividades{
     static private int maxEmprestimos = 4;
     static private int prazoDevolucao = 20;
     static private double multaAtraso = 0.75;

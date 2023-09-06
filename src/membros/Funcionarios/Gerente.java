@@ -1,9 +1,9 @@
-package pessoas.Funcionarios;
+package membros.Funcionarios;
 
 import biblioteca.sistema.Relatorio;
 
-public class Adiministrador extends Funcionario implements GerenciaAvancada{
-	public Adiministrador(String nome, long idFaculdade, String endereco, String contato,
+public class Gerente extends Funcionario implements Gerencia{
+	public Gerente(String nome, long idFaculdade, String endereco, String contato,
 			String dataDeRegistro) {
 		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
 	}
@@ -15,7 +15,7 @@ public class Adiministrador extends Funcionario implements GerenciaAvancada{
 	}
 
 	@Override
-	public void aplicarMultas() {
+	public void aplicarMulta() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -30,13 +30,5 @@ public class Adiministrador extends Funcionario implements GerenciaAvancada{
 	public Relatorio gerarRelatorio() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-	
-	public void cadastrarMembros() {
-		// TODO 
-	}
-	
-	public void cadastrarObras() {
-		// TODO
 	}
 }

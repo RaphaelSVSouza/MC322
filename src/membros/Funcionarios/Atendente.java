@@ -1,4 +1,4 @@
-package pessoas.Funcionarios;
+package membros.Funcionarios;
 
 public class Atendente extends Funcionario {
 	public Atendente(String nome, long idFaculdade, String endereco, String contato,
