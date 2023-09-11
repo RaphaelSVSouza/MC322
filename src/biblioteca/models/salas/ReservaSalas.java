@@ -55,13 +55,26 @@ public class ReservaSalas {
 	
 	//classes internas
 	public class SalaIndividual {
-		private String nome;
+		private final String nome;
 		private boolean possuiComputador;
 		
 		public SalaIndividual(String nome, boolean possuiComputador) {
 			this.nome = nome;
 			this.possuiComputador = possuiComputador;
 		}
+		
+		//getters e setters
+	    public String getNome() {
+	        return nome;
+	    }
+
+	    public boolean isPossuiComputador() {
+	        return possuiComputador;
+	    }
+
+	    public void setPossuiComputador(boolean possuiComputador) {
+	        this.possuiComputador = possuiComputador;
+	    }
 	}
 	
 	public class SalaGrupo {

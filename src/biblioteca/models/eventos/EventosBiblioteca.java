@@ -2,16 +2,21 @@ package biblioteca.models.eventos;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.ArrayList;
+import biblioteca.models.equipamentos.Equipamento;
 
 public class EventosBiblioteca {
     private String topico;
     private LocalDate data;
     private String local;
+    private final TipoDeEvento tipo;
 
-    public EventosBiblioteca(String topico, LocalDate data, String local) {
+    public EventosBiblioteca(String topico, LocalDate data, String local, TipoDeEvento tipo) {
         this.topico = topico;
         this.data = data;
         this.local = local;
+        this.tipo = tipo;
     }
 
     // Getters & Setters
@@ -39,17 +44,21 @@ public class EventosBiblioteca {
         this.topico = topico;
     }
     
+    public TipoDeEvento getTipoDeEvento() {
+    	return tipo;
+    }
+    
     //classes internas
     public class Workshop {
         private String instrutor;            
         private String info; // Texto que armazena informações sobre o instrutor e o workshop
         private LocalTime horario;
-        private String materiais;
+        private List<String> materiaisNecessarios;
 
         public Workshop(String instrutor, String info, String materiais, LocalTime horario) {
             this.instrutor = instrutor;
             this.info = info;
-            this.materiais = materiais;
+            this.materiaisNecessarios = new ArrayList<>();
             this.horario = horario;
         }
 
@@ -62,8 +71,8 @@ public class EventosBiblioteca {
             return instrutor;
         }
 
-        public String getMateriais() {
-            return materiais;
+        public List<String> getMateriais() {
+            return materiaisNecessarios;
         }
 
         public void setInfo(String info) {
@@ -74,9 +83,13 @@ public class EventosBiblioteca {
             this.instrutor = instrutor;
         }
 
-        public void setMateriais(String materiais) {
-            this.materiais = materiais;
-        }
+	    public void adicionarMaterial(String material) {
+	    	materiaisNecessarios.add(material);
+	    }
+
+	    public void removerMaterial(String material) {
+	    	materiaisNecessarios.remove(material);
+	    }
         
         public LocalTime getHorario() {
             return horario;
@@ -117,9 +130,9 @@ public class EventosBiblioteca {
     public class Exposicao {
         private String detalhes;
         private String expositores;
-        private String duracao;
+        private int duracao; //em minutos
         
-        public Exposicao(String detalhes, String expositores, String duracao) {
+        public Exposicao(String detalhes, String expositores, int duracao) {
             this.detalhes = detalhes;
             this.expositores = expositores;
             this.duracao = duracao;
@@ -130,7 +143,7 @@ public class EventosBiblioteca {
             return detalhes;
         }
 
-        public String getDuracao() {
+        public int getDuracao() {
             return duracao;
         }
 
@@ -142,7 +155,7 @@ public class EventosBiblioteca {
             this.detalhes = detalhes;
         }
 
-        public void setDuracao(String duracao) {
+        public void setDuracao(int duracao) {
             this.duracao = duracao;
         }
 
