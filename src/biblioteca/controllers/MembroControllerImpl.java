@@ -2,23 +2,22 @@ package biblioteca.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import biblioteca.models.membros.academicos.Academico;
+import biblioteca.models.membros.Membro;
 
 public class MembroControllerImpl implements MembroController {
-    private List<Academico> membros;
+    private List<Membro> membros;
 
     public MembroControllerImpl() {
         membros = new ArrayList<>();
     }
 
     @Override
-    public List<Academico> listarMembros() {
+    public List<Membro> listarMembros() {
         return membros;
     }
 
     @Override
-    public Academico buscarMembroPorIdentificacao(String identificacao) {
+    public Membro buscarMembroPorIdentificacao(String identificacao) {
         // Lógica de busca
         return null;
     }

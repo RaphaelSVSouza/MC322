@@ -29,6 +29,7 @@ public class Adiministrador extends Funcionario implements Gerencia{
 	@Override
 	public Relatorio gerarRelatorio() {
 		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	public void cadastrarMembros() {
