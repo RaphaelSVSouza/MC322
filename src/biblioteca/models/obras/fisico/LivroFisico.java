@@ -7,11 +7,11 @@ public class LivroFisico extends ExemplarFisico {
     private final GeneroLiterario genero;
 
     //construtor
-    public LivroFisico(String titulo, String autor, String editora, int ano, GeneroLiterario genero,
+    public LivroFisico(int id, String titulo, String autor, String editora, int ano, GeneroLiterario genero,
     		String sinopse, String capa_path, 
     		int numTotalCopias, int numCopiasDisponiveis, Estado conservacao,
     		String isbn, int edicao, int localizacao) {
-        super(titulo, autor, editora, ano, sinopse, capa_path,
+        super(id, titulo, autor, editora, ano, sinopse, capa_path,
         		numTotalCopias, numCopiasDisponiveis, conservacao);
         this.isbn = isbn;
         this.edicao = edicao;

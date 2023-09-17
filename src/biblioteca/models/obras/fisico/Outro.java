@@ -6,11 +6,11 @@ public class Outro extends ExemplarFisico {
     private int localizacao;
     private final String genero;
 
-    public Outro(String titulo, String autor, String editora, int ano, String genero,
+    public Outro(int id, String titulo, String autor, String editora, int ano, String genero,
     		String sinopse, String capa_path,
     		int numTotalCopias, int numCopiasDisponiveis, Estado conservacao,
     		String tipoRecurso, String formato, int localizacao) {
-    	super(titulo, autor, editora, ano, sinopse, capa_path,
+    	super(id, titulo, autor, editora, ano, sinopse, capa_path,
         		numTotalCopias, numCopiasDisponiveis, conservacao);
         this.tipoRecurso = tipoRecurso;
         this.formato = formato;
