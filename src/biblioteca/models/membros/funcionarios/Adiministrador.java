@@ -30,6 +30,7 @@ public class Adiministrador extends Funcionario implements Gerencia{
 	public Relatorio gerarRelatorio() {
 		return null;
 		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	public void cadastrarMembros() {
