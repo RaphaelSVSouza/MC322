@@ -1,21 +1,28 @@
 package biblioteca.models.obras;
 
 import javax.imageio.ImageIO;
+import biblioteca.controllers.atividades.Comentario;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Obra { // Classe Item Multimídia do enunciado
-    private final String titulo;
+    private final int id;
+	private final String titulo;
     private final String autor;
     private final String editora;
     private final int ano;
     private final String sinopse;
     private BufferedImage capa;
+    
+    private List<Comentario> comentarios = new LinkedList<>();
 
-    public Obra(String titulo, String autor, String editora, int ano, 
+    public Obra(int id, String titulo, String autor, String editora, int ano, 
     		String sinopse, String capa_path) {
-        this.titulo = titulo;
+        this.id = id;
+		this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
@@ -31,6 +38,41 @@ public class Obra { // Classe Item Multimídia do enunciado
             e.printStackTrace();
         }
     }
+    
+    //classe interna de Categorias
+    public static class Categoria {
+    	private String nome;
+    	private int quantidadeDeEstantes;
+    	
+    	public Categoria(String nome, int quantidadeDeEstantes) {
+    		this.nome = nome;
+    		this.quantidadeDeEstantes = quantidadeDeEstantes;
+    	}
+
+		public String getNome() {
+			return nome;
+		}
+
+		public void setNome(String nome) {
+			this.nome = nome;
+		}
+
+		public int getQuantidadeDeEstantes() {
+			return quantidadeDeEstantes;
+		}
+
+		public void adicionarEstantes(int quantidade) {
+			this.quantidadeDeEstantes = this.quantidadeDeEstantes + quantidade;
+		}
+		
+		public void removerEstantes(int quantidade) {
+			this.quantidadeDeEstantes = this.quantidadeDeEstantes - quantidade;
+			if (this.quantidadeDeEstantes < 0) {
+				this.quantidadeDeEstantes = 0;
+			}
+		}
+    }
+    
 
     // Getters & Setters
     public String getTitulo() {
@@ -56,5 +98,17 @@ public class Obra { // Classe Item Multimídia do enunciado
     public BufferedImage getCapa() {
     	return capa;
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+
+	public void adicionarComentario(Comentario comentario) {
+		this.comentarios.add(comentario);
+	}
 }
 

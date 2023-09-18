@@ -1,16 +1,18 @@
 package biblioteca.models.eventos;
 
 import java.time.LocalDate;
+import biblioteca.models.membros.Membro;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.ArrayList;
-import biblioteca.models.equipamentos.Equipamento;
+import java.util.LinkedList;
 
 public class EventosBiblioteca {
     private String topico;
     private LocalDate data;
     private String local;
     private final TipoDeEvento tipo;
+    List<Membro> participantes = new LinkedList<>();
 
     public EventosBiblioteca(String topico, LocalDate data, String local, TipoDeEvento tipo) {
         this.topico = topico;
@@ -46,6 +48,14 @@ public class EventosBiblioteca {
     
     public TipoDeEvento getTipoDeEvento() {
     	return tipo;
+    }
+    
+    public void adicionarParticipante(Membro participante) {
+    	participantes.add(participante);
+    }
+    
+    public void removerParticipante(Membro participante) {
+    	participantes.remove(participante);
     }
     
     //classes internas

@@ -14,11 +14,11 @@ public class Ebook extends Obra {
     private String dataDisponibilidade;
     private final GeneroLiterario genero;
 
-    public Ebook(String titulo, String autor, String editora, int ano, GeneroLiterario genero, 
+    public Ebook(int id, String titulo, String autor, String editora, int ano, GeneroLiterario genero, 
     		String sinopse, String capa_path, 
     		String formato, int numTotalLicencas, String formatoDeArquivo, String urlAcesso,
                  List<String> requisitosDeLeitura, String dataDisponibilidade) {
-    	super(titulo, autor, editora, ano, sinopse, capa_path);
+    	super(id, titulo, autor, editora, ano, sinopse, capa_path);
         this.formato = formato;
         this.numTotalLicencas = numTotalLicencas;
         this.formatoDeArquivo = formatoDeArquivo;
