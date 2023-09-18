@@ -16,7 +16,7 @@ public class RepositorioMembros {
     	membros.add(membro);
     }
 
-    public Membro getMembro(long id) {
+    public Membro getMembroById(long id) {
         Iterator<Membro> iterator = membros.iterator();
         
         while(iterator.hasNext()) {
