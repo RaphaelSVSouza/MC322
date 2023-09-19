@@ -1,6 +1,6 @@
 package biblioteca.models.estantes;
 
-import biblioteca.models.obras.fisico.ExemplarFisico;
+import biblioteca.models.itensmultimidia.fisico.ExemplarFisico;
 
 public class EstanteFisica extends Estante{	
 	private final int indexEstante;

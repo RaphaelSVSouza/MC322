@@ -1,8 +1,10 @@
 package biblioteca.models.repositorios;
 
 import java.util.Set;
-import java.util.HashSet;
-import biblioteca.models.obras.Obra.Categoria;;
+
+import biblioteca.models.itensmultimidia.ItemMultimidia.Categoria;
+
+import java.util.HashSet;;
 
 public class RepositorioOutros {
 	Set<Categoria> categorias = new HashSet<>();

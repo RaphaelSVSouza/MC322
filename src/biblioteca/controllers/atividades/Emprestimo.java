@@ -2,20 +2,21 @@ package biblioteca.controllers.atividades;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.models.membros.*;
 import biblioteca.models.membros.academicos.*;
 import biblioteca.models.membros.funcionarios.*;
-import biblioteca.models.obras.Obra;
 
 public class Emprestimo { 
     private final LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
-    private final Obra obra;
+    private final ItemMultimidia obra;
     private final Membro pessoa; 
     private List<Renovacao> renovacoes;
 
     // Construtor
-    public Emprestimo(Obra obra, Membro pessoa, LocalDate dataEmprestimo) {
+    public Emprestimo(ItemMultimidia obra, Membro pessoa, LocalDate dataEmprestimo) {
         this.dataEmprestimo = LocalDate.now();
         
         if (pessoa instanceof Graduando) {
@@ -50,7 +51,7 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Obra getObra() {
+    public ItemMultimidia getObra() {
         return this.obra;
     }
 

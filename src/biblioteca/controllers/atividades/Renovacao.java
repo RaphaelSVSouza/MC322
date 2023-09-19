@@ -2,26 +2,26 @@ package biblioteca.controllers.atividades;
 
 import java.time.LocalDate;
 
+import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.models.membros.Membro;
-import biblioteca.models.obras.Obra;
 
 public class Renovacao { // Associação das classes Membro e Obra
 
-    private Obra obraRenovada;
+    private ItemMultimidia obraRenovada;
     private Membro pessoaRenovacao;
     private LocalDate dataRenovacao;
 
-    public Renovacao(Obra obraRenovada, Membro pessoaRenovacao, LocalDate dataRenovacao) {
+    public Renovacao(ItemMultimidia obraRenovada, Membro pessoaRenovacao, LocalDate dataRenovacao) {
         this.obraRenovada = obraRenovada;
         this.pessoaRenovacao = pessoaRenovacao;
         this.dataRenovacao = dataRenovacao;
     }
 
-    public Obra getObraRenovada() {
+    public ItemMultimidia getObraRenovada() {
         return this.obraRenovada;
     }
 
-    public void setObraRenovada(Obra obraRenovada) {
+    public void setObraRenovada(ItemMultimidia obraRenovada) {
         this.obraRenovada = obraRenovada;
     }
 
