@@ -18,7 +18,8 @@ public class PosGraduando extends Academico {
     	PosGraduando.maxEmprestimos = maxEmprestimos;
     }
 
-    public static int getPrazoDevolucao() {
+    @Override
+    public int getPrazoDevolucao() {
         return prazoDevolucao;
     }
 

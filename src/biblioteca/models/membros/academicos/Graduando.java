@@ -18,7 +18,8 @@ public class Graduando extends Academico {
     	Graduando.maxEmprestimos = maxEmprestimos;
     }
 
-    public static int getPrazoDevolucao() {
+    @Override
+    public int getPrazoDevolucao() {
         return prazoDevolucao;
     }
 
