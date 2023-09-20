@@ -55,4 +55,8 @@ public abstract class Membro {
 	public void removerEmprestimo(Emprestimo emprestimo) {
 		this.emprestimos.remove(emprestimo);
 	}
+	
+	//métodos abstratos
+	
+	public abstract int getPrazoDevolucao();
 }

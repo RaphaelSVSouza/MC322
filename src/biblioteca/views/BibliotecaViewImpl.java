@@ -2,7 +2,7 @@ package biblioteca.views;
 
 import java.util.List;
 import biblioteca.controllers.BibliotecaController;
-import biblioteca.models.obras.Obra;
+import biblioteca.models.itensmultimidia.ItemMultimidia;
 
 public class BibliotecaViewImpl implements BibliotecaView {
     private BibliotecaController bibliotecaController;
@@ -12,7 +12,7 @@ public class BibliotecaViewImpl implements BibliotecaView {
     }
 
     @Override
-    public void mostrarItensDisponiveis(List<Obra> itens) {
+    public void mostrarItensDisponiveis(List<ItemMultimidia> itens) {
         // Implementação da exibição de itens disponíveis
     }
 

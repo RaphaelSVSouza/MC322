@@ -20,7 +20,8 @@ public class Funcionario extends Membro implements Atividades{
     	Funcionario.maxEmprestimos = maxEmprestimos;
     }
 
-    public static int getPrazoDevolucao() {
+    @Override
+    public int getPrazoDevolucao() {
         return prazoDevolucao;
     }
 
