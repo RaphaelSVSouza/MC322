@@ -1,25 +1,24 @@
 package biblioteca.controllers.atividades;
 
-import biblioteca.models.itensmultimidia.*;
 import biblioteca.models.membros.Membro;;
 
-public class Reserva {
-    private ItemMultimidia obra; 
+public class Reserva<T> {
+    private T item; 
     private Membro pessoa;
     private boolean reservado;
 
-    public Reserva(ItemMultimidia obra, Membro pessoa) {
-        this.obra = obra;
+    public Reserva(Membro pessoa, T item) {
+        this.item = item;
         this.pessoa = pessoa;
         this.reservado = true;
     }
 
-    public ItemMultimidia getObra() {
-        return this.obra;
+    public T getItem() {
+        return this.item;
     }
 
-    public void setObra(ItemMultimidia obra) {
-        this.obra = obra;
+    public void setItem(T item) {
+        this.item = item;
     }
 
     public Membro getMembros() {

@@ -1,74 +1,41 @@
 package biblioteca.models.equipamentos;
 
 public class Equipamento {
-    // Classes internas
-    public static class Informatica {
-        private String nome;
-        private final CategoriaEquipamento tipo;
+    private String nome;
+    private CategoriaEquipamento tipo;
 
-        public Informatica(String nome, CategoriaEquipamento tipo) {
-            this.nome = nome;
-            this.tipo = tipo;
-        }
+    public Equipamento(String nome, CategoriaEquipamento tipo) {
+        this.nome = nome;
+        this.tipo = tipo;
+    }
 
-        // Getters e Setters para os atributos
-        public String getNome() {
-            return nome;
-        }
+    public String getNome() {
+        return nome;
+    }
 
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-        public CategoriaEquipamento getTipo() {
-            return tipo;
+    public CategoriaEquipamento getTipo() {
+        return tipo;
+    }
+
+    public static class Informatica extends Equipamento {
+        public Informatica(String nome) {
+            super(nome, CategoriaEquipamento.INFORMATICA);
         }
     }
 
-    public static class Audiovisual {
-        private String nome;
-        private final CategoriaEquipamento tipo;
-
+    public static class Audiovisual extends Equipamento {
         public Audiovisual(String nome) {
-            this.nome = nome;
-            this.tipo = CategoriaEquipamento.AUDIOVISUAL;
-        }
-
-        // Getters e Setters para os atributos
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public CategoriaEquipamento getTipo() {
-            return tipo;
+            super(nome, CategoriaEquipamento.AUDIOVISUAL);
         }
     }
 
-    public static class Impressao {
-        private String nome;
-        private final CategoriaEquipamento tipo;
-
+    public static class Impressao extends Equipamento {
         public Impressao(String nome) {
-            this.nome = nome;
-            this.tipo = CategoriaEquipamento.IMPRESSAO;
-        }
-
-        // Getters e Setters
-        public String getNome() {
-            return nome;
-        }
-
-        public void setNome(String nome) {
-            this.nome = nome;
-        }
-
-        public CategoriaEquipamento getTipo() {
-            return tipo;
+            super(nome, CategoriaEquipamento.IMPRESSAO);
         }
     }
 }
-

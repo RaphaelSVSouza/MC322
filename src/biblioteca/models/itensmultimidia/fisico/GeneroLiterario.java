@@ -12,5 +12,7 @@ public enum GeneroLiterario {
     ENGENHARIA,
     MEDICINA_E_SAUDE,
     DIREITO,
-    LITERATURA_ESTRANGEIRA,
+    LITERATURA_ESTRANGEIRA, 
+    AVENTURA, 
+    ROMANCE,
 }

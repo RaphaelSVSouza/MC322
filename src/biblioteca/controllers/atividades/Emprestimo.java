@@ -2,18 +2,20 @@ package biblioteca.controllers.atividades;
 
 import java.time.LocalDate;
 import java.util.List;
+
+import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.models.membros.Membro;
 
-public class Emprestimo { 
+public class Emprestimo<T> { 
     private final LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
-    private final ItemMultimidia item;
+    private final T item;
     private final Membro membro; 
     private List<Renovacao> renovacoes;
 
     // Construtor
-    public Emprestimo(ItemMultimidia item, Membro membro) {
+    public Emprestimo(T item, Membro membro) {
         this.dataEmprestimo = LocalDate.now();
         this.membro = membro;
         this.dataDevolucao = dataEmprestimo.plusDays(membro.getPrazoDevolucao());
@@ -22,7 +24,7 @@ public class Emprestimo {
 
 
     // Getters & Setters
-    public Membro getMembroEmprestimo() {
+    public Membro getMembro() {
         return this.membro;
     }
     
@@ -38,7 +40,7 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public ItemMultimidia getItem() {
+    public T getItem() {
         return this.item;
     }
 
