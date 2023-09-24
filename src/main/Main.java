@@ -83,12 +83,13 @@ public class Main {
     	Emprestimo<LivroFisico> emprestimoItem1 = livros.emprestarItem(livro1, graduando1);
     	Emprestimo<LivroFisico> emprestimoItem2 = livros.emprestarItem(livro2, graduando2);
         
-        Emprestimo<Informatica> emprestimoEquip1 = new Emprestimo<>(equipamentoInformatica, graduando1);
+        Emprestimo<Equipamento.Informatica> emprestimoEquip1 = new Emprestimo<>(equipamentoInformatica, graduando1);
     	
         ListaEmprestimos<LivroFisico> livrosEmprestados = new ListaEmprestimos<>();
         livrosEmprestados.addEmprestimo(emprestimoItem1);
+		livrosEmprestados.addEmprestimo(emprestimoItem2);
         
-        ListaEmprestimos<Informatica> EquipInfoEmprestados = new ListaEmprestimos<>();
+        ListaEmprestimos<Equipamento.Informatica> EquipInfoEmprestados = new ListaEmprestimos<>();
         livrosEmprestados.addEmprestimo(emprestimoItem1);
         	
         

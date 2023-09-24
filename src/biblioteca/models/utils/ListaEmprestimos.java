@@ -7,26 +7,40 @@ import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.models.membros.Membro;
 
 public class ListaEmprestimos<T> {
-	private List<Emprestimo<T>> lista = new LinkedList<>();
+	private List<Emprestimo<T>> empretimos = new LinkedList<>();
 	private int numEmprestimos;
 	
-//	//construtor
-//	public ListaEmprestimos(T item) {
-//		lista = new LinkedList<>();
-//	}
-	
-	//getters e setters
+	// Getters
 	public int getNumEmprestimos() {
 		return numEmprestimos;
 	}
-	
+
+	public List<Emprestimo<T>> getEmprestimos() {
+		return empretimos;
+	}	
+
 	//métodos variados
 	public void addEmprestimo(Emprestimo<T> emprestimo) {
 		lista.add(emprestimo);
 		this.numEmprestimos++;
 	}
 
-//	public List<T> getEmprestimosByMembro(Membro membro) {
-//		for ()
-//	}
+	public boolean removerEmprestimo(T emprestimo) {
+		this.numEmprestimos--;	
+		return emprestimos.remove(emprestimo);
+	}
+
+	public boolean possuiEmprestimo(T emprestimo) {
+		return emprestimos.contains(emprestimo);
+	}
+
+	public Membro getCliente(T item) {
+		for(Emprestimo<T> emprestimo: items) {
+			if(emprestimo.getItem().equals(item)) {
+				return emprestimo.getMembro();
+			}
+		}
+		return null;
+	}
+
 }

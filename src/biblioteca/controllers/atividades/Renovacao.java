@@ -5,15 +5,15 @@ import java.time.LocalDate;
 import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.models.membros.Membro;
 
-public class Renovacao { // Associação das classes Membro e Obra
+public class Renovacao { // Associação das classes Membro e ItemMultimidia
 
     private ItemMultimidia obraRenovada;
-    private Membro pessoaRenovacao;
+    private Membro membroRenovacao;
     private LocalDate dataRenovacao;
 
-    public Renovacao(ItemMultimidia obraRenovada, Membro pessoaRenovacao, LocalDate dataRenovacao) {
+    public Renovacao(ItemMultimidia obraRenovada, Membro membroRenovacao, LocalDate dataRenovacao) {
         this.obraRenovada = obraRenovada;
-        this.pessoaRenovacao = pessoaRenovacao;
+        this.membroRenovacao = membroRenovacao;
         this.dataRenovacao = dataRenovacao;
     }
 
@@ -25,12 +25,12 @@ public class Renovacao { // Associação das classes Membro e Obra
         this.obraRenovada = obraRenovada;
     }
 
-    public Membro getPessoaRenovacao() {
-        return this.pessoaRenovacao;
+    public Membro getMembroRenovacao() {
+        return this.membroRenovacao;
     }
 
     public void setMembroRenovacao(Membro membroRenovacao) {
-        this.pessoaRenovacao = membroRenovacao;
+        this.membroRenovacao = membroRenovacao;
     }
 
     public LocalDate getDataRenovacao() {

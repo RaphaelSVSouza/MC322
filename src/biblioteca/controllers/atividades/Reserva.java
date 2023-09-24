@@ -4,13 +4,11 @@ import biblioteca.models.membros.Membro;;
 
 public class Reserva<T> {
     private T item; 
-    private Membro pessoa;
-    private boolean reservado;
+    private Membro membro;
 
-    public Reserva(Membro pessoa, T item) {
+    public Reserva(Membro membro, T item) {
         this.item = item;
-        this.pessoa = pessoa;
-        this.reservado = true;
+        this.membro = membro;
     }
 
     public T getItem() {
@@ -22,27 +20,11 @@ public class Reserva<T> {
     }
 
     public Membro getMembros() {
-        return this.pessoa;
+        return this.membro;
     }
 
-    public void setPessoa(Membro pessoa) {
-        this.pessoa = pessoa;
-    }
-
-    public boolean isReservado() {
-        return this.reservado;
-    }
-
-    public boolean getReservado() {
-        return this.reservado;
-    }
-
-    public void setReservado(boolean reservado) {
-        this.reservado = reservado;
-    }
-
-    public void cancelarReserva() {
-        this.reservado = false;
+    public void setMembro(Membro membro) {
+        this.membro = membro;
     }
     
 }

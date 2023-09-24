@@ -9,7 +9,6 @@ import biblioteca.controllers.atividades.*;
 
 public class RepositorioAtividades {
 	private Set<Emprestimo> emprestimos = new TreeSet<>();
-	private List<Devolucao> devolucoes = new LinkedList<>();
 	private List<Renovacao> renovacoes = new LinkedList<>();
 	private List<Reserva> reservas = new LinkedList<>();
 	

@@ -12,7 +12,7 @@ public class Emprestimo<T> {
     private LocalDate dataDevolucao;
     private final T item;
     private final Membro membro; 
-    private List<Renovacao> renovacoes;
+    // private List<Renovacao> renovacoes;
 
     // Construtor
     public Emprestimo(T item, Membro membro) {
@@ -44,9 +44,9 @@ public class Emprestimo<T> {
         return this.item;
     }
 
-    public List<Renovacao> getRenovacoes() {
-        return this.renovacoes;
-    }
+    // public List<Renovacao> getRenovacoes() {
+    //     return this.renovacoes;
+    // }
 
     public void setRenovacoes(List<Renovacao> renovacoes) {
         this.renovacoes = renovacoes;

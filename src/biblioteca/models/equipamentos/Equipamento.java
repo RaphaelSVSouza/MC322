@@ -3,6 +3,7 @@ package biblioteca.models.equipamentos;
 public class Equipamento {
     private String nome;
     private CategoriaEquipamento tipo;
+    private boolean reservado = false;
 
     public Equipamento(String nome, CategoriaEquipamento tipo) {
         this.nome = nome;
@@ -15,6 +16,14 @@ public class Equipamento {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public boolean isReservado() {
+        return this.reservado;
+    }
+
+    public void setReservado(boolean reservado) {
+        this.reservado = reservado;
     }
 
     public CategoriaEquipamento getTipo() {

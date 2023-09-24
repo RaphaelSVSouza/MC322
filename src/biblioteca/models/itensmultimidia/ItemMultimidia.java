@@ -16,17 +16,19 @@ public class ItemMultimidia { // Classe Item Multimídia do enunciado
     private final int ano;
     private final String sinopse;
     private BufferedImage capa;
+    // private bollean reservado;
     
     private List<Comentario> comentarios = new LinkedList<>();
 
     public ItemMultimidia(int id, String titulo, String autor, String editora, int ano, 
-    		String sinopse, String capa_path) {
+    		String sinopse, String capa_path, boolean reservado) {
         this.id = id;
 		this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
         this.sinopse = sinopse;
+        this.reservado = false;
         
         try {
             // Carregar a imagem em uma variável BufferedImage
@@ -102,6 +104,14 @@ public class ItemMultimidia { // Classe Item Multimídia do enunciado
 	public int getId() {
 		return id;
 	}
+
+    // public bollean getReservado() {
+    //     return this.reservado;
+    // }
+
+    // public void setReservado(bollean reservado) {
+    //     this.reservado = reservado;
+    // }
 
 	public List<Comentario> getComentarios() {
 		return comentarios;
