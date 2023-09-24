@@ -28,7 +28,7 @@ public class ItemMultimidia { // Classe Item Multimídia do enunciado
         this.editora = editora;
         this.ano = ano;
         this.sinopse = sinopse;
-        this.reservado = false;
+        // this.reservado = false;
         
         try {
             // Carregar a imagem em uma variável BufferedImage
