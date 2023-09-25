@@ -86,12 +86,12 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
 
     public boolean reservarItem(T item, Membro membro) {
         Reserva<T> reserva = new Reserva<>(item, membro);
-        if (reservas.possuiReserva(reserva)) {
+        if (reservas.possuiReserva(item)) {
             System.out.println("O item já está reservado");
             return false;
         }
 
-        reservas.addReserva(reserva, membro);
+        reservas.addReserva(reserva);
         System.out.println(item + " reservado para " + membro.getNome());
         return true;
     }

@@ -26,7 +26,7 @@ public class ListaReservas<T> {
     }
 
     // Métodos variados
-    public void addReserva(T reserva) {
+    public void addReserva(Reserva<T> reserva) {
         reservas.add(reserva);
         this.numReservas++;
     }

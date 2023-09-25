@@ -84,7 +84,7 @@ public class Main {
 			
 
 		// Reserva de um item multimidia
-    	livros.emprestarItem(livro2, graduando2);
+    	livros.reservarItem(livro2, graduando2);
 		
         
     	

@@ -6,7 +6,7 @@ public class Reserva<T> {
     private T item; 
     private Membro membro;
 
-    public Reserva(Membro membro, T item) {
+    public Reserva(T item, Membro membro) {
         this.item = item;
         this.membro = membro;
     }
