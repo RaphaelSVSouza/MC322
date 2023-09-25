@@ -70,9 +70,10 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
             return null;
         }
 
-        if (emprestimos.possuiEmprestimo(item)){
-            System.out.println(item + " sob empréstimo.");
-            return null;
+        // Verificar se o item já está sob empréstimo
+        if (emprestimos.possuiEmprestimo(item)) {
+                System.out.println(item + " sob empréstimo.");
+                return null;
         }
 
         Emprestimo<T> emprestimo = new Emprestimo<>(item, membro);
@@ -97,7 +98,8 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
 
 	public boolean devolverItem(T item, Membro membro) {
         if(emprestimos.possuiEmprestimo(item) && emprestimos.getCliente(item) == membro) {
-            emprestimos.removerEmprestimo(item);
+            emprestimo.removerEmprestimo();
+            emprestimo.removerEmprestimo(item);
             System.out.println(item + " devolvido por " + membro.getNome());
             return true;
         }

@@ -77,20 +77,17 @@ public class Main {
     	livros.addItem(livro1);
     	livros.addItem(livro2);
     	
-    	Equipamento.Informatica equipamentoInformatica = new Equipamento.Informatica("Notebook");
-        Equipamento.Audiovisual equipamentoAudiovisual = new Equipamento.Audiovisual("Projetor");
     	
-    	Emprestimo<LivroFisico> emprestimoItem1 = livros.emprestarItem(livro1, graduando1);
-    	Emprestimo<LivroFisico> emprestimoItem2 = livros.emprestarItem(livro2, graduando2);
+		// Emprestimo de um item multimidia
+    	livros.emprestarItem(livro1, graduando1);
+		livros.emprestarItem(livro1, graduando2);
+			
+
+		// Reserva de um item multimidia
+    	livros.emprestarItem(livro2, graduando2);
+		
         
-        Emprestimo<Equipamento.Informatica> emprestimoEquip1 = new Emprestimo<>(equipamentoInformatica, graduando1);
     	
-        ListaEmprestimos<LivroFisico> livrosEmprestados = new ListaEmprestimos<>();
-        livrosEmprestados.addEmprestimo(emprestimoItem1);
-		livrosEmprestados.addEmprestimo(emprestimoItem2);
-        
-        ListaEmprestimos<Equipamento.Informatica> EquipInfoEmprestados = new ListaEmprestimos<>();
-        livrosEmprestados.addEmprestimo(emprestimoItem1);
         	
         
 	}

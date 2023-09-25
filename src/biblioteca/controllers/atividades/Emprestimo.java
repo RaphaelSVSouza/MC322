@@ -12,7 +12,7 @@ public class Emprestimo<T> {
     private LocalDate dataDevolucao;
     private final T item;
     private final Membro membro; 
-    // private List<Renovacao> renovacoes;
+    private boolean ativo;
 
     // Construtor
     public Emprestimo(T item, Membro membro) {
@@ -20,10 +20,19 @@ public class Emprestimo<T> {
         this.membro = membro;
         this.dataDevolucao = dataEmprestimo.plusDays(membro.getPrazoDevolucao());
         this.item = item; 
+        this.ativo = true;
     }
 
 
     // Getters & Setters
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public voida encerrarEmprestimo() {
+        this.ativo = false;
+    }
+    
     public Membro getMembro() {
         return this.membro;
     }

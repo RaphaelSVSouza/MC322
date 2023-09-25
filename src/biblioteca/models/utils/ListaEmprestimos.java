@@ -30,8 +30,13 @@ public class ListaEmprestimos<T> {
 		return emprestimos.remove(emprestimo);
 	}
 
-	public boolean possuiEmprestimo(T emprestimo) {
-		return emprestimos.contains(emprestimo);
+	public boolean possuiEmprestimo(T item) {
+		for (Emprestimo<T> emprestimo : emprestimos) {
+			if (emprestimo.getItem().equals(item) && emprestimo.isAtivo()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public Membro getCliente(T item) {
