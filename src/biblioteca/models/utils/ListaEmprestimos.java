@@ -7,7 +7,7 @@ import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.models.membros.Membro;
 
 public class ListaEmprestimos<T> {
-	private List<Emprestimo<T>> empretimos = new LinkedList<>();
+	private List<Emprestimo<T>> emprestimos = new LinkedList<>();
 	private int numEmprestimos;
 	
 	// Getters
@@ -16,7 +16,7 @@ public class ListaEmprestimos<T> {
 	}
 
 	public List<Emprestimo<T>> getEmprestimos() {
-		return empretimos;
+		return emprestimos;
 	}	
 
 	//métodos variados
