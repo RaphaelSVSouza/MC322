@@ -25,7 +25,7 @@ public class ListaEmprestimos<T> {
 		this.numEmprestimos++;
 	}
 
-	public boolean removerEmprestimo(T emprestimo) {
+	public boolean removerEmprestimo(Emprestimo<T> emprestimo) {
 		this.numEmprestimos--;	
 		return emprestimos.remove(emprestimo);
 	}

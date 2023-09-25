@@ -78,22 +78,16 @@ public class Main {
     	livros.addItem(livro2);
     	
     	
-		// Emprestimo de um item multimidia
-    	livros.emprestarItem(livro1, graduando1);
-		livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponivel (já empresgtado)
-			
+        // Emprestimo de um item multimidia
+        Emprestimo<LivroFisico> emprestimo1 = livros.emprestarItem(livro1, graduando1);
+        Emprestimo<LivroFisico> emprestimo2 = livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponível (já emprestado)
 
-		// Reserva de um item multimidia
-    	livros.reservarItem(livro2, graduando2);
-		livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item ja reservado
-		
-		// Devolução de um item multimidia
-		livros.devolverItem(livro1, graduando1);
-		livros.emprestarItem(livro1, graduando2); // emprestimo de um item que ja foi devolvido
-		
-        
-    	
-        	
-        
-	}
+        // Reserva de um item multimidia
+        livros.reservarItem(livro2, graduando2);
+        livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado
+
+        // Devolução de um item multimidia
+        livros.devolverItem(emprestimo1);
+        livros.emprestarItem(livro1, graduando2); // empréstimo de um item que já foi devolvido
+    }
 }

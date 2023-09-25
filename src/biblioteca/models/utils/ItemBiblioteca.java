@@ -96,17 +96,19 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
         return true;
     }
 
-	public boolean devolverItem(T item, Membro membro) {
-        if(emprestimos.possuiEmprestimo(item) && emprestimos.getCliente(item) == membro) {
-            emprestimo.removerEmprestimo();
-            emprestimo.removerEmprestimo(item);
+    public boolean devolverItem(Emprestimo<T> emprestimo) {
+        T item = emprestimo.getItem();
+        Membro membro = emprestimo.getMembro();
+    
+        if (emprestimos.possuiEmprestimo(item) && emprestimos.getCliente(item) == membro) {
+            emprestimos.removerEmprestimo(emprestimo);
             System.out.println(item + " devolvido por " + membro.getNome());
             return true;
         }
-        
+    
         System.out.println(item + " não pode ser devolvido");
-		return false;
-	}
+        return false;
+    }
 
 }
 
