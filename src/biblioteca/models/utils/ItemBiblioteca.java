@@ -29,7 +29,7 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
 		return itens;
 	}
     
-    public List<T> getreservas() {
+    public List<T> getReservas() {
         return reservas;
     }
 
