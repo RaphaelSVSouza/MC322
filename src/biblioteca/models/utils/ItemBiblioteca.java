@@ -6,7 +6,9 @@ import java.util.List;
 
 import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.controllers.atividades.*;
-
+import biblioteca.controllers.atividades.Emprestimo;
+import biblioteca.controllers.atividades.Reserva;
+import biblioteca.models.membros.Membro;
 public class ItemBiblioteca<T extends ItemMultimidia> {
 	private List<T> itens;
     private ListaReservas<T> reservas;
@@ -63,8 +65,13 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
     
     public Emprestimo<T> emprestarItem(T item, Membro membro) {
         // Verificar se o item está na lista de itens reservados
-        if (reservas.contains(item)) {
+        if (reservas.possuiReserva(item)) {
             System.out.println(item + " já está reservado e não pode ser emprestado.");
+            return null;
+        }
+
+        if (emprestimos.possuiEmprestimo(item)){
+            System.out.println(item + " sob empréstimo até " + emprestimo.getItem().getDataDevolucao());
             return null;
         }
 

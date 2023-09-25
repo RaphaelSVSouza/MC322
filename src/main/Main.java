@@ -47,7 +47,7 @@ public class Main {
     		    2023, 
     		    GeneroLiterario.AVENTURA, 
     		    "Sinopse do livro 1", 
-    		    "/home/je/Pictures/Screenshots/capa.png", // Sem capa
+    		    null, // Sem capa
     		    100, 
     		    50, 
     		    Estado.BOM, 
@@ -64,7 +64,7 @@ public class Main {
     		    2022, 
     		    GeneroLiterario.ROMANCE, 
     		    "Sinopse do livro 2", 
-    		    "/home/je/Pictures/Screenshots/capa.png", 
+    		    null, 
     		    75, 
     		    25, 
     		    Estado.MEDIO, 

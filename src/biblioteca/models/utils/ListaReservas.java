@@ -2,7 +2,8 @@ package biblioteca.models.utils;
 
 import java.util.LinkedList;
 import java.util.List;
-
+import biblioteca.controllers.atividades.Reserva;
+import biblioteca.models.membros.Membro;
 public class ListaReservas<T> {
     private List<Reserva<T>> reservas = new LinkedList<>();
     private int numReservas;

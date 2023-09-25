@@ -15,30 +15,30 @@ public class ItemMultimidia { // Classe Item Multimídia do enunciado
     private final String editora;
     private final int ano;
     private final String sinopse;
+    private String capa_path;
     private BufferedImage capa;
-    // private bollean reservado;
     
     private List<Comentario> comentarios = new LinkedList<>();
 
     public ItemMultimidia(int id, String titulo, String autor, String editora, int ano, 
-    		String sinopse, String capa_path, boolean reservado) {
+    		String sinopse, String capa_path) {
         this.id = id;
 		this.titulo = titulo;
         this.autor = autor;
         this.editora = editora;
         this.ano = ano;
         this.sinopse = sinopse;
-        // this.reservado = false;
+        this.capa_path = capa_path;
         
-        try {
-            // Carregar a imagem em uma variável BufferedImage
-        	capa = ImageIO.read(new File(capa_path));
+    //     try {
+    //         // Carregar a imagem em uma variável BufferedImage
+    //     	capa = ImageIO.read(new File(capa_path));
 
-            // Agora você tem a imagem na variável "imagem" e pode usá-la como desejar
-            // Por exemplo, você pode exibi-la em um JFrame, desenhá-la em um componente, etc.
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    //         // Agora você tem a imagem na variável "imagem" e pode usá-la como desejar
+    //         // Por exemplo, você pode exibi-la em um JFrame, desenhá-la em um componente, etc.
+    //     } catch (IOException e) {
+    //         e.printStackTrace();
+    //     }
     }
     
     //classe interna de Categorias
@@ -104,14 +104,6 @@ public class ItemMultimidia { // Classe Item Multimídia do enunciado
 	public int getId() {
 		return id;
 	}
-
-    // public bollean getReservado() {
-    //     return this.reservado;
-    // }
-
-    // public void setReservado(bollean reservado) {
-    //     this.reservado = reservado;
-    // }
 
 	public List<Comentario> getComentarios() {
 		return comentarios;
