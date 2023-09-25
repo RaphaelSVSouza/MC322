@@ -71,7 +71,7 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
         }
 
         if (emprestimos.possuiEmprestimo(item)){
-            System.out.println(item + " sob empréstimo até " + emprestimo.getItem().getDataDevolucao());
+            System.out.println(item + " sob empréstimo.");
             return null;
         }
 
@@ -92,7 +92,7 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
 
         reservas.addReserva(reserva, membro);
         System.out.println(item + " reservado para " + membro.getNome());
-
+        return true;
     }
 
 	public boolean devolverItem(T item, Membro membro) {
