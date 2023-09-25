@@ -31,12 +31,27 @@ public class ListaReservas<T> {
         this.numReservas++;
     }
 
-    public boolean removerReserva(T reserva) {
-        this.numReservas--;
-        return reservas.remove(reserva);
+    public boolean removerReserva(T item, Membro membro) {
+        Iterator<Reserva<T>> iterator = reservas.iterator();
+        while (iterator.hasNext()) {
+            Reserva<T> reserva = iterator.next();
+            if (reserva.getItem().equals(item) && reserva.getMembro().equals(membro)) {
+                iterator.remove();
+                this.numReservas--;
+                return true;
+            }
+        }
+        
+        return false;
     }
+    
 
-    public boolean possuiReserva(T reserva) {
-        return reservas.contains(reserva);
+    public boolean possuiReserva(T item) {
+        for (Reserva<T> reserva : reservas) {
+            if (reserva.getItem().equals(item)) {
+                return true;
+            }
+        }
+        return false;
     }
 } 
