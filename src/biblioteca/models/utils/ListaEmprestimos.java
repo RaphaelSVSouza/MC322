@@ -21,7 +21,7 @@ public class ListaEmprestimos<T> {
 
 	//métodos variados
 	public void addEmprestimo(Emprestimo<T> emprestimo) {
-		lista.add(emprestimo);
+		emprestimos.add(emprestimo);
 		this.numEmprestimos++;
 	}
 
@@ -35,7 +35,7 @@ public class ListaEmprestimos<T> {
 	}
 
 	public Membro getCliente(T item) {
-		for(Emprestimo<T> emprestimo: items) {
+		for(Emprestimo<T> emprestimo: emprestimos) {
 			if(emprestimo.getItem().equals(item)) {
 				return emprestimo.getMembro();
 			}
