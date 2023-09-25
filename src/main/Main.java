@@ -80,11 +80,16 @@ public class Main {
     	
 		// Emprestimo de um item multimidia
     	livros.emprestarItem(livro1, graduando1);
-		livros.emprestarItem(livro1, graduando2);
+		livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponivel (já empresgtado)
 			
 
 		// Reserva de um item multimidia
     	livros.reservarItem(livro2, graduando2);
+		livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item ja reservado
+		
+		// Devolução de um item multimidia
+		livros.devolverItem(livro1, graduando1);
+		livros.emprestarItem(livro1, graduando2); // emprestimo de um item que ja foi devolvido
 		
         
     	
