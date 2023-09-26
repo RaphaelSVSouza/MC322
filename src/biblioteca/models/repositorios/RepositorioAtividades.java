@@ -11,6 +11,7 @@ public class RepositorioAtividades {
 	private Set<Emprestimo> emprestimos = new TreeSet<>();
 	private List<Renovacao> renovacoes = new LinkedList<>();
 	private List<Reserva> reservas = new LinkedList<>();
+	private List<Devolucao> devolucoes = new LinkedList<>();
 	
 	public void adicionarEmprestimo(Emprestimo emprestimo) {
         emprestimos.add(emprestimo);

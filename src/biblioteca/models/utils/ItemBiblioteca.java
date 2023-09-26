@@ -3,12 +3,10 @@ package biblioteca.models.utils;
 import java.util.LinkedList;
 import biblioteca.models.membros.Membro;
 import java.util.List;
-
 import biblioteca.models.itensmultimidia.ItemMultimidia;
-import biblioteca.controllers.atividades.*;
 import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.controllers.atividades.Reserva;
-import biblioteca.models.membros.Membro;
+
 public class ItemBiblioteca<T extends ItemMultimidia> {
 	private List<T> itens;
     private ListaReservas<T> reservas;
@@ -29,19 +27,19 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
 		return itens;
 	}
     
-    public List<T> getReservas() {
+    public ListaReservas<T> getReservas() {
         return reservas;
     }
 
-    public void setreservas(List<T> reservas) {
+    public void setreservas(ListaReservas<T> reservas) {
         this.reservas = reservas;
     }
 
-    public List<T> getItensEmprestados() {
+    public ListaEmprestimos<T> getItensEmprestados() {
         return emprestimos;
     }
 
-    public void setItensEmprestados(List<T> emprestimos) {
+    public void setItensEmprestados(ListaEmprestimos<T> emprestimos) {
         this.emprestimos = emprestimos;
     }
 
@@ -66,19 +64,19 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
     public Emprestimo<T> emprestarItem(T item, Membro membro) {
         // Verificar se o item está na lista de itens reservados
         if (reservas.possuiReserva(item)) {
-            System.out.println(item + " já está reservado e não pode ser emprestado.");
+            System.out.println(item.getTitulo() + " já está reservado e não pode ser emprestado.");
             return null;
         }
 
         // Verificar se o item já está sob empréstimo
         if (emprestimos.possuiEmprestimo(item)) {
-                System.out.println(item + " sob empréstimo.");
+                System.out.println(item.getTitulo() + " sob empréstimo.");
                 return null;
         }
 
         Emprestimo<T> emprestimo = new Emprestimo<>(item, membro);
         emprestimos.addEmprestimo(emprestimo);
-        System.out.println(emprestimo.getItem() + " emprestado para " + membro.getNome() +
+        System.out.println(emprestimo.getItem().getTitulo() + " emprestado para " + membro.getNome() +
                             " até " + emprestimo.getDataDevolucao());
         this.numeroDeItensEmprestados++;
         return emprestimo;
@@ -92,7 +90,7 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
         }
 
         reservas.addReserva(reserva);
-        System.out.println(item + " reservado para " + membro.getNome());
+        System.out.println(item.getTitulo() + " reservado para " + membro.getNome());
         return true;
     }
 
@@ -102,11 +100,11 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
     
         if (emprestimos.possuiEmprestimo(item) && emprestimos.getCliente(item) == membro) {
             emprestimos.removerEmprestimo(emprestimo);
-            System.out.println(item + " devolvido por " + membro.getNome());
+            System.out.println(item.getTitulo() + " devolvido por " + membro.getNome());
             return true;
         }
     
-        System.out.println(item + " não pode ser devolvido");
+        System.out.println(item.getTitulo() + " não pode ser devolvido");
         return false;
     }
 

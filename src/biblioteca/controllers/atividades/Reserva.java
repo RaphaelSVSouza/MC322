@@ -19,7 +19,7 @@ public class Reserva<T> {
         this.item = item;
     }
 
-    public Membro getMembros() {
+    public Membro getMembro() {
         return this.membro;
     }
 
