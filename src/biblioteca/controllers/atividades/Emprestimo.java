@@ -29,7 +29,7 @@ public class Emprestimo<T> {
         return ativo;
     }
 
-    public voida encerrarEmprestimo() {
+    public void encerrarEmprestimo() {
         this.ativo = false;
     }
     
@@ -57,7 +57,7 @@ public class Emprestimo<T> {
     //     return this.renovacoes;
     // }
 
-    public void setRenovacoes(List<Renovacao> renovacoes) {
-        this.renovacoes = renovacoes;
-    }
+//    public void setRenovacoes(List<Renovacao> renovacoes) {
+//        this.renovacoes = renovacoes;
+//    }
 }
