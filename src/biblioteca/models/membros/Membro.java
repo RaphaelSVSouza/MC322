@@ -41,4 +41,8 @@ public abstract class Membro {
 	//métodos abstratos
 	
 	public abstract int getPrazoDevolucao();
+	public abstract int getNumEmprestimos();
+	public abstract int getMaxEmprestimos();
+	public abstract double getMultaAtraso();
+	public abstract void setNumEmprestimos(int numEmprestimos);
 }

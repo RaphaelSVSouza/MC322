@@ -72,6 +72,59 @@ public class Main {
     		    2, 
     		    202
     		);
+    	
+    	LivroFisico livro3 = new LivroFisico(
+                1,              // ID
+                "O Senhor dos Anéis", // Título
+                "J.R.R. Tolkien",    // Autor
+                "Editora XYZ",        // Editora
+                1954,                 // Ano
+                GeneroLiterario.AVENTURA, // Gênero
+                "Uma grande aventura em um mundo de fantasia.", // Sinopse
+                "/caminho/para/capa1.jpg", // Caminho da capa
+                100,                  // Número total de cópias
+                20,                   // Número de cópias disponíveis
+                Estado.BOM,           // Conservação
+                "978-85-00000-00-1",  // ISBN
+                1,                    // Edição
+                1                     // Localização
+            );
+
+            // Instanciando o segundo livro
+            LivroFisico livro4 = new LivroFisico(
+                2,              // ID
+                "Dom Quixote",  // Título
+                "Miguel de Cervantes", // Autor
+                "Editora ABC",  // Editora
+                1605,           // Ano
+                GeneroLiterario.CLASSICO, // Gênero
+                "As aventuras do cavaleiro enlouquecido Dom Quixote.", // Sinopse
+                "/caminho/para/capa2.jpg", // Caminho da capa
+                150,            // Número total de cópias
+                30,             // Número de cópias disponíveis
+                Estado.EXCELENTE,   // Conservação
+                "978-85-11111-11-1",  // ISBN
+                2,              // Edição
+                2               // Localização
+            );
+
+            // Instanciando o terceiro livro
+            LivroFisico livro5 = new LivroFisico(
+                3,              // ID
+                "1984",         // Título
+                "George Orwell",// Autor
+                "Editora DEF",  // Editora
+                1949,           // Ano
+                GeneroLiterario.LITERATURA_ESTRANGEIRA, // Gênero
+                "Um mundo distópico controlado pelo Grande Irmão.", // Sinopse
+                "/caminho/para/capa3.jpg", // Caminho da capa
+                120,            // Número total de cópias
+                40,             // Número de cópias disponíveis
+                Estado.MEDIO,// Conservação
+                "978-85-22222-22-2",  // ISBN
+                1,              // Edição
+                3               // Localização
+            );
 
     	ItemBiblioteca<LivroFisico> livros = new ItemBiblioteca<>();
     	livros.addItem(livro1);
@@ -81,7 +134,12 @@ public class Main {
         // Emprestimo de um item multimidia
         Emprestimo<LivroFisico> emprestimo1 = livros.emprestarItem(livro1, graduando1);
         Emprestimo<LivroFisico> emprestimo2 = livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponível (já emprestado)
-
+        Emprestimo<LivroFisico> emprestimo12 = livros.emprestarItem(livro2, graduando1);
+        Emprestimo<LivroFisico> emprestimo13 = livros.emprestarItem(livro3, graduando1);
+        Emprestimo<LivroFisico> emprestimo14 = livros.emprestarItem(livro4, graduando1);
+        Emprestimo<LivroFisico> emprestimo15 = livros.emprestarItem(livro5, graduando1);
+        
+        
         // Reserva de um item multimidia
         livros.reservarItem(livro2, graduando2);
         livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado

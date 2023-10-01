@@ -6,6 +6,7 @@ import java.util.List;
 import biblioteca.models.itensmultimidia.ItemMultimidia;
 import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.controllers.atividades.Reserva;
+import biblioteca.controllers.excecoes.*;
 
 public class ItemBiblioteca<T extends ItemMultimidia> {
 	private List<T> itens;
@@ -62,18 +63,31 @@ public class ItemBiblioteca<T extends ItemMultimidia> {
     
     
     public Emprestimo<T> emprestarItem(T item, Membro membro) {
-        // Verificar se o item está na lista de itens reservados
-        if (reservas.possuiReserva(item)) {
-            System.out.println(item.getTitulo() + " já está reservado e não pode ser emprestado.");
-            return null;
-        }
-
-        // Verificar se o item já está sob empréstimo
-        if (emprestimos.possuiEmprestimo(item)) {
-                System.out.println(item.getTitulo() + " sob empréstimo.");
+    	membro.setNumEmprestimos(membro.getNumEmprestimos()+1);
+    	try {
+    		// verifica se o membro ja excedeu o limite de empréstimos
+    		if (membro.getNumEmprestimos() > membro.getMaxEmprestimos()) {
+    			throw new ExcecaoLimiteEmprestimoExcedido();
+    		}
+    		
+            // Verificar se o item está na lista de itens reservados
+            if (reservas.possuiReserva(item)) {
+                System.out.println(item.getTitulo() + " já está reservado e não pode ser emprestado.");
                 return null;
-        }
-
+            }
+            
+            // Verificar se o item já está sob empréstimo
+            if (emprestimos.possuiEmprestimo(item)) {
+                    System.out.println(item.getTitulo() + " sob empréstimo.");
+                    return null;
+            }
+    	} 
+    	catch (ExcecaoLimiteEmprestimoExcedido e) {
+    		System.out.println(e.getMessage());
+    		membro.setNumEmprestimos(membro.getNumEmprestimos()-1);
+    		return null;
+    	}
+    	
         Emprestimo<T> emprestimo = new Emprestimo<>(item, membro);
         emprestimos.addEmprestimo(emprestimo);
         System.out.println(emprestimo.getItem().getTitulo() + " emprestado para " + membro.getNome() +

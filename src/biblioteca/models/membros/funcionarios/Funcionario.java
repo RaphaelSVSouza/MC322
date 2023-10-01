@@ -3,6 +3,7 @@ package biblioteca.models.membros.funcionarios;
 import biblioteca.models.membros.Membro;
 
 public class Funcionario extends Membro implements Atividades{
+	private int numEmprestimos;
     static private int maxEmprestimos = 4;
     static private int prazoDevolucao = 20;
     static private double multaAtraso = 0.75;
@@ -10,9 +11,10 @@ public class Funcionario extends Membro implements Atividades{
 	public Funcionario(String nome, long idFaculdade, String endereco, String contato,
 			String dataDeRegistro) {
 		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
+		numEmprestimos = 0;
 	}
 	
-	public static int getMaxEmprestimos() {
+	public int getMaxEmprestimos() {
         return maxEmprestimos;
     }
 
@@ -29,7 +31,7 @@ public class Funcionario extends Membro implements Atividades{
     	Funcionario.prazoDevolucao = prazoDevolucao;
     }
 
-    public static double getMultaAtraso() {
+    public double getMultaAtraso() {
         return multaAtraso;
     }
 
@@ -59,5 +61,15 @@ public class Funcionario extends Membro implements Atividades{
 	public void realizarReserva() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getNumEmprestimos() {
+		return numEmprestimos;
+	}
+	
+	@Override
+	public void setNumEmprestimos(int numEmprestimos) {
+		this.numEmprestimos = numEmprestimos;
 	}
 }
