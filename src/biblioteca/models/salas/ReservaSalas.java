@@ -10,10 +10,14 @@ public class ReservaSalas {
 	private LocalDate dataReserva;
 	private LocalTime horaInicio;
 	private LocalTime horaFim;
+	private int quantidadeDePessoas;
 	private StatusReserva statusReserva;
+	private Sala sala;
 	
-	public ReservaSalas(LocalDate dataReserva, LocalTime horaInicio,
-			LocalTime horaFim) {
+	public ReservaSalas(Sala sala, int quantidadeDePessoas, LocalDate dataReserva,
+			LocalTime horaInicio, LocalTime horaFim) {
+		this.sala = sala;
+		this.setQuantidadeDePessoas(quantidadeDePessoas);
 		this.dataReserva = dataReserva;
 		this.horaInicio = horaInicio;
 		this.horaFim = horaFim;
@@ -53,21 +57,59 @@ public class ReservaSalas {
         this.horaFim = horaFim;
     }
 	
+	public Sala getSala() {
+		return sala;
+	}
+
+	public void setSala(Sala sala) {
+		this.sala = sala;
+	}
+
+	public int getQuantidadeDePessoas() {
+		return quantidadeDePessoas;
+	}
+
+	public void setQuantidadeDePessoas(int quantidadeDePessoas) {
+		this.quantidadeDePessoas = quantidadeDePessoas;
+	}
+
 	//classes internas
-	public class SalaIndividual {
-		private final String nome;
-		private boolean possuiComputador;
-		
-		public SalaIndividual(String nome, boolean possuiComputador) {
+    public class Sala {
+    	private String nome;
+    	private int capacidadeMaxima;
+    	
+		public Sala(String nome, int capacidadeMaxima) {
 			this.nome = nome;
-			this.possuiComputador = possuiComputador;
+			this.capacidadeMaxima = capacidadeMaxima;
 		}
-		
+    	
 		//getters e setters
 	    public String getNome() {
 	        return nome;
 	    }
+	    
+	    public void setNome(String nome) {
+	        this.nome = nome;
+	    }
 
+		public int getCapacidadeMaxima() {
+			return capacidadeMaxima;
+		}
+
+		public void setCapacidadeMaxima(int capacidadeMaxima) {
+			this.capacidadeMaxima = capacidadeMaxima;
+		}
+    }
+    
+	public class SalaIndividual extends Sala {
+		private boolean possuiComputador;
+		
+		public SalaIndividual(String nome, int capacidadeMax, boolean possuiComputador) {
+			super(nome, capacidadeMax);
+			this.possuiComputador = possuiComputador;
+		}
+		
+		//getters e setters
 	    public boolean isPossuiComputador() {
 	        return possuiComputador;
 	    }
@@ -77,24 +119,15 @@ public class ReservaSalas {
 	    }
 	}
 	
-	public class SalaGrupo {
-	    private int capacidadeMaxima;
+	public class SalaGrupo extends Sala{
 	    private boolean possuiEquipamentoApresentacao;
 
-	    public SalaGrupo(int capacidadeMaxima, boolean possuiEquipamentoApresentacao) {
-	        this.capacidadeMaxima = capacidadeMaxima;
+	    public SalaGrupo(String nome, int capacidadeMaxima, boolean possuiEquipamentoApresentacao) {
+	    	super(nome, capacidadeMaxima);
 	        this.possuiEquipamentoApresentacao = possuiEquipamentoApresentacao;
 	    }
 
 	    // getters e setters
-	    public int getCapacidadeMaxima() {
-	        return capacidadeMaxima;
-	    }
-
-	    public void setCapacidadeMaxima(int capacidadeMaxima) {
-	        this.capacidadeMaxima = capacidadeMaxima;
-	    }
-
 	    public boolean isPossuiEquipamentoApresentacao() {
 	        return possuiEquipamentoApresentacao;
 	    }
@@ -104,23 +137,15 @@ public class ReservaSalas {
 	    }
 	}
 	
-	public class SalaSilenciosa {
-	    private int numeroAssentos;
+	public class SalaSilenciosa extends Sala{
 	    private boolean possuiCabinesIndividuais;
 
-	    public SalaSilenciosa(int numeroAssentos, boolean possuiCabinesIndividuais) {
-	        this.numeroAssentos = numeroAssentos;
+	    public SalaSilenciosa(String nome, int capacidadeMax, boolean possuiCabinesIndividuais) {
+	        super(nome, capacidadeMax);
 	        this.possuiCabinesIndividuais = possuiCabinesIndividuais;
 	    }
 
 	    //getters e setters)
-	    public int getNumeroAssentos() {
-	        return numeroAssentos;
-	    }
-
-	    public void setNumeroAssentos(int numeroAssentos) {
-	        this.numeroAssentos = numeroAssentos;
-	    }
 
 	    public boolean isPossuiCabinesIndividuais() {
 	        return possuiCabinesIndividuais;
@@ -131,11 +156,12 @@ public class ReservaSalas {
 	    }
 	}
 	
-	public class SalaMultimidia {
+	public class SalaMultimidia extends Sala{
 	    private List<Equipamento> equipamentos;
 
-	    public SalaMultimidia() {
-	        this.equipamentos = new ArrayList<>();
+	    public SalaMultimidia(String nome, int capacidadeMax) {
+	        super(nome, capacidadeMax);
+	    	this.equipamentos = new ArrayList<>();
 	    }
 
 	    public void adicionarEquipamento(Equipamento equipamento) {

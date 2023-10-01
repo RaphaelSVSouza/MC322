@@ -1,6 +1,5 @@
 package biblioteca.models.membros.funcionarios;
 
-
 import biblioteca.controllers.atividades.Relatorio;
 
 public interface Gerencia {

@@ -4,6 +4,7 @@ import biblioteca.models.membros.Membro;
 
 public class Funcionario extends Membro implements Atividades{
 	private int numEmprestimos;
+	private double montanteMulta;
     static private int maxEmprestimos = 4;
     static private int prazoDevolucao = 20;
     static private double multaAtraso = 0.75;
@@ -12,6 +13,7 @@ public class Funcionario extends Membro implements Atividades{
 			String dataDeRegistro) {
 		super(nome, idFaculdade, endereco, contato, dataDeRegistro);
 		numEmprestimos = 0;
+		montanteMulta = 0;
 	}
 	
 	public int getMaxEmprestimos() {
@@ -71,5 +73,15 @@ public class Funcionario extends Membro implements Atividades{
 	@Override
 	public void setNumEmprestimos(int numEmprestimos) {
 		this.numEmprestimos = numEmprestimos;
+	}
+
+	@Override
+	public double getMontanteMulta() {
+		return montanteMulta;
+	}
+
+	@Override
+	public void setMontanteMulta(double montanteMulta) {
+		this.montanteMulta = montanteMulta;
 	}
 }

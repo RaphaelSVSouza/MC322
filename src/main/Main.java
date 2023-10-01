@@ -145,7 +145,7 @@ public class Main {
         livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado
 
         // Devolução de um item multimidia
-        livros.devolverItem(emprestimo1);
+        livros.devolverItem(emprestimo1, false);
         livros.emprestarItem(livro1, graduando2); // empréstimo de um item que já foi devolvido
     }
 }

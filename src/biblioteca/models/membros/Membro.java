@@ -43,6 +43,8 @@ public abstract class Membro {
 	public abstract int getPrazoDevolucao();
 	public abstract int getNumEmprestimos();
 	public abstract int getMaxEmprestimos();
+	public abstract double getMontanteMulta();
+	public abstract void setMontanteMulta(double montanteMulta);
 	public abstract double getMultaAtraso();
 	public abstract void setNumEmprestimos(int numEmprestimos);
 }
