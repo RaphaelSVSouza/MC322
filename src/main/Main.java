@@ -11,12 +11,12 @@ import biblioteca.models.itensmultimidia.fisico.Estado;
 import biblioteca.models.itensmultimidia.fisico.GeneroLiterario;
 import biblioteca.models.itensmultimidia.fisico.LivroFisico;
 import biblioteca.models.membros.academicos.Graduando;
-
 import java.util.*;
+import java.lang.reflect.*;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		EstanteFisica[] estantesFisicas = new EstanteFisica[14];
     	for (int i=0; i<14; i++) {
     		estantesFisicas[i] = new EstanteFisica(i);
@@ -126,26 +126,39 @@ public class Main {
                 3               // Localização
             );
 
-    	ItemBiblioteca<LivroFisico> livros = new ItemBiblioteca<>();
-    	livros.addItem(livro1);
-    	livros.addItem(livro2);
-    	
-    	
-        // Emprestimo de um item multimidia
-        Emprestimo<LivroFisico> emprestimo1 = livros.emprestarItem(livro1, graduando1);
-        Emprestimo<LivroFisico> emprestimo2 = livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponível (já emprestado)
-        Emprestimo<LivroFisico> emprestimo12 = livros.emprestarItem(livro2, graduando1);
-        Emprestimo<LivroFisico> emprestimo13 = livros.emprestarItem(livro3, graduando1);
-        Emprestimo<LivroFisico> emprestimo14 = livros.emprestarItem(livro4, graduando1);
-        Emprestimo<LivroFisico> emprestimo15 = livros.emprestarItem(livro5, graduando1);
-        
-        
-        // Reserva de um item multimidia
-        livros.reservarItem(livro2, graduando2);
-        livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado
-
-        // Devolução de um item multimidia
-        livros.devolverItem(emprestimo1, false);
-        livros.emprestarItem(livro1, graduando2); // empréstimo de um item que já foi devolvido
+            
+            
+            
+        Class<?> minhaClasse = livro1.getClass(); // Acesso direto a classe
+        Class<?> minhaClasseSame = Class.forName("LivroFisico.livro1"); // Pelo nome da classe
+            
+            
+        Method[] metodos = minhaClasse.getMethods();
+        for (Method metodo : metodos) {
+            System.out.println("Nome do método: " + metodo.getName());
+        }
+            
+            
+//    	ItemBiblioteca<LivroFisico> livros = new ItemBiblioteca<>();
+//    	livros.addItem(livro1);
+//    	livros.addItem(livro2);
+//    	
+//    	
+//        // Emprestimo de um item multimidia
+//        Emprestimo<LivroFisico> emprestimo1 = livros.emprestarItem(livro1, graduando1);
+//        Emprestimo<LivroFisico> emprestimo2 = livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponível (já emprestado)
+//        Emprestimo<LivroFisico> emprestimo12 = livros.emprestarItem(livro2, graduando1);
+//        Emprestimo<LivroFisico> emprestimo13 = livros.emprestarItem(livro3, graduando1);
+//        Emprestimo<LivroFisico> emprestimo14 = livros.emprestarItem(livro4, graduando1);
+//        Emprestimo<LivroFisico> emprestimo15 = livros.emprestarItem(livro5, graduando1);
+//        
+//        
+//        // Reserva de um item multimidia
+//        livros.reservarItem(livro2, graduando2);
+//        livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado
+//
+//        // Devolução de um item multimidia
+//        livros.devolverItem(emprestimo1, false);
+//        livros.emprestarItem(livro1, graduando2); // empréstimo de um item que já foi devolvido
     }
 }
