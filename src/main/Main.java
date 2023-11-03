@@ -127,15 +127,19 @@ public class Main {
             );
 
             
-            
-            
         Class<?> minhaClasse = livro1.getClass(); // Acesso direto a classe
-        Class<?> minhaClasseSame = Class.forName("LivroFisico.livro1"); // Pelo nome da classe
+        Class<?> minhaClasseSame = Class.forName("biblioteca.models.itensmultimidia.fisico.LivroFisico"); // Pelo nome da classe
             
             
         Method[] metodos = minhaClasse.getMethods();
         for (Method metodo : metodos) {
             System.out.println("Nome do método: " + metodo.getName());
+        }
+        
+        Field[] campos = minhaClasse.getDeclaredFields(); // Use getFields() se quiser APENAS os campos públicos
+        for (Field campo : campos) {
+            System.out.println("Nome do campo: " + campo.getName());
+            //System.out.println("Tipo do campo: " + campo.getType());
         }
             
             
