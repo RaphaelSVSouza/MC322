@@ -26,7 +26,7 @@ public class CReflection {
 	}
 	
 	void imprimitCampos() {
-		for (classe : classes) {
+		for (Class<?> classe : classes) {
 	        Class<?> minhaClasse = livro1.getClass(); // Acesso direto a classe
 	        Class<?> minhaClasseSame = Class.forName("biblioteca.models.itensmultimidia.fisico.LivroFisico"); // Pelo nome da classe
 	            
@@ -43,4 +43,26 @@ public class CReflection {
 	        }
 		}
 	}
+
+	public <T> boolean imprimirLista(List<T> lista) {
+		for (T objeto : lista) {
+			Class<?> classeObjeto = objeto.getClass();
+			System.out.println("Tipo de objeto: " + classeObjeto.getSimpleName());
+	
+			Field[] campos = classeObjeto.getDeclaredFields();
+			for (Field campo : campos) {
+				campo.setAccessible(true);
+				String nomeCampo = campo.getName();
+				try {
+					Object valorCampo = campo.get(objeto);
+					System.out.println(nomeCampo + ": " + valorCampo);
+				} catch (Exception e) {
+					e.printStackTrace();
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	
 }
