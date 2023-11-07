@@ -1,6 +1,7 @@
 package main;
 
 import biblioteca.controllers.atividades.Emprestimo;
+import biblioteca.models.utils.CReflection;
 import biblioteca.controllers.atividades.Emprestimo;
 import biblioteca.models.equipamentos.Equipamento;
 import biblioteca.models.equipamentos.Equipamento.Informatica;
@@ -127,25 +128,16 @@ public class Main {
             );
 
             
-        Class<?> minhaClasse = livro1.getClass(); // Acesso direto a classe
-        Class<?> minhaClasseSame = Class.forName("biblioteca.models.itensmultimidia.fisico.LivroFisico"); // Pelo nome da classe
+    	List<LivroFisico> livros = new ArrayList<>();
+    	livros.add(livro1);
+    	livros.add(livro2);
+            
+        CReflection.imprimirAtributosItens("LivroFisico", "fisico");
+        CReflection.imprimirMetodosItens("LivroFisico", "fisico");
+        CReflection.imprimirInfoLista(livros);
             
             
-        Method[] metodos = minhaClasse.getMethods();
-        for (Method metodo : metodos) {
-            System.out.println("Nome do método: " + metodo.getName());
-        }
-        
-        Field[] campos = minhaClasse.getDeclaredFields(); // Use getFields() se quiser APENAS os campos públicos
-        for (Field campo : campos) {
-            System.out.println("Nome do campo: " + campo.getName());
-            //System.out.println("Tipo do campo: " + campo.getType());
-        }
-            
-            
-//    	ItemBiblioteca<LivroFisico> livros = new ItemBiblioteca<>();
-//    	livros.addItem(livro1);
-//    	livros.addItem(livro2);
+
 //    	
 //    	
 //        // Emprestimo de um item multimidia

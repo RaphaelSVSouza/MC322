@@ -2,65 +2,107 @@ package biblioteca.models.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.List;
+import java.util.ArrayList;
+import biblioteca.models.membros.Membro;
 
 public class CReflection {
-	
-	
-	
-	
-	void imprimirMetodos(Object[] instancias) throws ClassNotFoundException {
-		for (Object instancia : instancias) {
-	        Class<?> minhaClasse = Class.forName("biblioteca.models.itensmultimidia.fisico.LivroFisico"); // Pelo nome da classe
-	            
-	        Method[] metodos = minhaClasse.getMethods();
-	        for (Method metodo : metodos) {
-	            System.out.println("Nome do método: " + metodo.getName());
-	        }
-	        
-	        Field[] campos = minhaClasse.getDeclaredFields(); // Use getFields() se quiser APENAS os campos públicos
-	        for (Field campo : campos) {
-	            System.out.println("Nome do campo: " + campo.getName());
-	            System.out.println("Tipo do campo: " + campo.getType());
-	        }
-		}
-	}
-	
-	void imprimitCampos() {
-		for (Class<?> classe : classes) {
-	        Class<?> minhaClasse = livro1.getClass(); // Acesso direto a classe
-	        Class<?> minhaClasseSame = Class.forName("biblioteca.models.itensmultimidia.fisico.LivroFisico"); // Pelo nome da classe
-	            
-	            
-	        Method[] metodos = minhaClasseSame.getMethods();
-	        for (Method metodo : metodos) {
-	            System.out.println("Nome do método: " + metodo.getName());
-	        }
-	        
-	        Field[] campos = minhaClasse.getDeclaredFields(); // Use getFields() se quiser APENAS os campos públicos
-	        for (Field campo : campos) {
-	            System.out.println("Nome do campo: " + campo.getName());
-	            System.out.println("Tipo do campo: " + campo.getType());
-	        }
-		}
-	}
 
-	public <T> boolean imprimirLista(List<T> lista) {
+	public static void imprimirMetodosMembros(String membro, String funcao) throws ClassNotFoundException {
+		
+		String path = "biblioteca.models.membros." + funcao + "." + membro; 
+		try {
+	        Class<?> classeObjeto = Class.forName(path); // Pelo nome da classe
+	            
+	        Method[] metodos = classeObjeto.getMethods();
+	     
+	        System.out.println("MÉTODOS:");
+	        for (Method metodo : metodos) {
+	            System.out.println("Método: " + metodo.getName());
+	        }
+	        System.out.println("-------------");
+		} catch (Exception ClassNotFoundException) {
+			System.err.println("Membro não encontrado");
+		}
+	}
+	
+    public static void imprimirAtributosMembros(String membro, String funcao) throws ClassNotFoundException {
+    	String path = "biblioteca.models.membros." + funcao + "." + membro; 
+        try {
+            Class<?> classeObjeto = Class.forName(path);
+
+            Field[] campos = classeObjeto.getDeclaredFields();
+            System.out.println("ATRIBUTOS:");
+            for (Field campo : campos) {
+                System.out.println("Nome: " + campo.getName());
+                System.out.println("Tipo: " + campo.getType());
+            }
+            System.out.println("-------------");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Membro não encontrado");
+        }
+    }
+	
+    public static void imprimirMetodosItens(String item, String tipo) throws ClassNotFoundException {
+		
+		String path = "biblioteca.models.itensmultimidia." + tipo + "." + item; 
+		try {
+	        Class<?> classeObjeto = Class.forName(path); // Pelo nome da classe
+	            
+	        Method[] metodos = classeObjeto.getMethods();
+	        System.out.println("MÉTODOS:");
+	        for (Method metodo : metodos) {
+	            System.out.println("Método: " + metodo.getName());
+	        }
+	        System.out.println("-------------");
+		} catch (Exception ClassNotFoundException) {
+			System.err.println("Membro não encontrado");
+		}
+	}
+	
+    public static void imprimirAtributosItens(String item, String tipo) throws ClassNotFoundException {
+    	String path = "biblioteca.models.itensmultimidia." + tipo + "." + item; 
+        try {
+            Class<?> classeObjeto = Class.forName(path);
+
+            Field[] campos = classeObjeto.getDeclaredFields();
+            System.out.println("ATRIBUTOS:");
+            for (Field campo : campos) {
+                System.out.println("Nome: " + campo.getName());
+                System.out.println("Tipo: " + campo.getType());
+            }
+            System.out.println("-------------");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Membro não encontrado");
+        }
+    }
+	
+    public static <T> boolean imprimirInfoLista(List<T> lista) {
 		for (T objeto : lista) {
 			Class<?> classeObjeto = objeto.getClass();
-			System.out.println("Tipo de objeto: " + classeObjeto.getSimpleName());
-	
+			System.out.println("imprimindo as informaçẽs da lista de " + classeObjeto.getSimpleName());
+			
+			Method[] metodos = classeObjeto.getMethods();
+			System.out.println("MÉTODOS:");
+	        for (Method metodo : metodos) {
+	            System.out.println("Método: " + metodo.getName());
+	        }
+			
 			Field[] campos = classeObjeto.getDeclaredFields();
+			System.out.println("ATRIBUTOS E VALORES:");
 			for (Field campo : campos) {
-				campo.setAccessible(true);
-				String nomeCampo = campo.getName();
-				try {
-					Object valorCampo = campo.get(objeto);
-					System.out.println(nomeCampo + ": " + valorCampo);
-				} catch (Exception e) {
-					e.printStackTrace();
-					return false;
-				}
-			}
+                String nomeCampo = campo.getName();
+                String nomeMetodo = "get" + Character.toUpperCase(nomeCampo.charAt(0)) + nomeCampo.substring(1);
+
+                try {
+                    Method getter = classeObjeto.getMethod(nomeMetodo);
+                    Object valorCampo = getter.invoke(objeto);
+                    System.out.println(nomeCampo + ": " + valorCampo);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return false;
+                }
+            }
 		}
 		return true;
 	}
