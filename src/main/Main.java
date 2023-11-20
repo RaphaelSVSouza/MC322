@@ -136,25 +136,17 @@ public class Main {
         CReflection.imprimirMetodosItens("LivroFisico", "fisico");
         CReflection.imprimirInfoLista(livros);
             
-            
 
-//    	
-//    	
-//        // Emprestimo de um item multimidia
-//        Emprestimo<LivroFisico> emprestimo1 = livros.emprestarItem(livro1, graduando1);
-//        Emprestimo<LivroFisico> emprestimo2 = livros.emprestarItem(livro1, graduando2); // tentativa de empréstimo de algo não disponível (já emprestado)
-//        Emprestimo<LivroFisico> emprestimo12 = livros.emprestarItem(livro2, graduando1);
-//        Emprestimo<LivroFisico> emprestimo13 = livros.emprestarItem(livro3, graduando1);
-//        Emprestimo<LivroFisico> emprestimo14 = livros.emprestarItem(livro4, graduando1);
-//        Emprestimo<LivroFisico> emprestimo15 = livros.emprestarItem(livro5, graduando1);
-//        
-//        
-//        // Reserva de um item multimidia
-//        livros.reservarItem(livro2, graduando2);
-//        livros.emprestarItem(livro2,graduando1); // tentativa de reservar um item já reservado
-//
-//        // Devolução de um item multimidia
-//        livros.devolverItem(emprestimo1, false);
-//        livros.emprestarItem(livro1, graduando2); // empréstimo de um item que já foi devolvido
+	// Criando uma instância da busca simples
+        Busca busca = new BuscarInformacoesBasicas(livros);
+
+        // Utilizando a busca
+        List<ItemMultimidia> resultados = busca.executar("0987654321");
+
+        // Exibindo os resultados
+        for (ItemMultimidia livro : resultados) {
+            System.out.println("ID: " + livro.getId() + ", Título: " + livro.getTitulo() + ", Autor: " + livro.getAutor() +
+                               ", Editora: " + livro.getEditora() + ", Ano: " + livro.getAno() + ", Sinopse: " + livro.getSinopse());
+        }
     }
 }
