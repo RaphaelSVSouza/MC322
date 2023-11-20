@@ -58,3 +58,17 @@ feito em dupla com @RaphaelSVSouza.
 - **Como?**
 
 	Definimos interfaces mais específicas, contendo apenas os métodos relevantes para as classes que a implementam. Alguns exemplo são as interfaces do package Controller, em que Biblioteca, Membro e Relatorio possuem uma interface cada.
+	
+## D: Dependency Inversion Principle
+
+-  **O que?** 
+
+	O Princípio da Inversão de Dependência sugere que os componentes de um módulo não utilizem diretamente as implementações de outro módulo. Ao invés disso, é necessário utilizar abstrações que as representem.
+	
+- **Por que?**
+
+	Isso torna o sistema mais flexível e menos acoplado, sem que alterações nos módulos afetem os componentes dos módulos que possuam alguma composição com o alterado.
+	
+- **Como?**
+
+	Usamos interfaces para garantir que as dependências sejam invertidas. Módulos de alto nível dependem de abstrações (interfaces), e as implementações concretas são 'injetadas' no momento apropriado, permitindo fácil substituição e extensão. Um exemplo disso é a implementação de busca, na classe BuscarInformacoesBasicas. Fizemos ela de forma que a classe Main dependa apenas da interface Busca, e não o contrário.
