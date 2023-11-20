@@ -48,3 +48,15 @@ feito em dupla com @RaphaelSVSouza.
 - **Como?**
 
 	Aplicamos esse princípio principalmente através do desenvolvimento correto das heranças. Um exemplo que tira proveito disso é a estrutura de dados ItemBiblioteca, em que nele podemos utilizar qualquer itemMultimidia, ou seja, filhos dessa classe.
+
+## I: Interface Segregation Principle
+
+-  **O que?** 
+
+	Pode-se dizer que este princípio é um reflexo dos três últimos princípios, porém aplicado à interfaces. Sua definição diz que uma classe não deve ser forçada a implementar interfaces que ela não utiliza.
+- **Por que?**
+
+	Ela é implementada para evitar interfaces mal dimensionadas, que forçam as classes a implementarem métodos que não são relevantes para elas. Isso contribui para uma melhor coesão no código, o que facilita muito o entendimento de todos os programadores envolvidos no desenvolvimento.
+- **Como?**
+
+	Definimos interfaces mais específicas, contendo apenas os métodos relevantes para as classes que a implementam. Alguns exemplo são as interfaces do package Controller, em que Biblioteca, Membro e Relatorio possuem uma interface cada.
