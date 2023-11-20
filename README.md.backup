@@ -33,4 +33,14 @@ feito em dupla com @RaphaelSVSouza.
 	
 - **Como?**
 
-	Aplicamos esse princípio principalmente através do desenvolvimento correto das heranças. Um exemplo que tira proveito disso é a estrutura de dados ItemBiblioteca, em que nele podemos utilizar qualquer item, afinal todos são filhos de Item
+	Aplicamos esse princípio principalmente através do desenvolvimento correto das heranças. Um exemplo que tira proveito disso é a estrutura de dados ItemBiblioteca, em que nele podemos utilizar qualquer itemMultimidia, ou seja, filhos dessa classe.
+	
+## I: Interface Segregation Principle
+
+-  **Por que?** 
+
+	Pode-se dizer que este princípio é um reflexo dos três últimos princípios, porém aplicado à interfaces. Sua definição diz que 
+
+- **Como?**
+
+	
