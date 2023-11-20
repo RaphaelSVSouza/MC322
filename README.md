@@ -8,8 +8,6 @@ feito em dupla com @RaphaelSVSouza.
  
 ## S: Single Responsibility Principle
 
-## S: Single Responsibility Principle
-
 -  **O que?** 
 
 	Como o nome sugere, de acordo com esse princípio cada classe deve ter uma única responsabilidade principal.
