@@ -8,7 +8,13 @@ feito em dupla com @RaphaelSVSouza.
  
 ## S: Single Responsibility Principle
 
--  **Por que?** 
+## S: Single Responsibility Principle
+
+-  **O que?** 
+
+	Como o nome sugere, de acordo com esse princípio cada classe deve ter uma única responsabilidade principal.
+	
+- **Por que?**
 
 	Usamos esse princípio pois ele torna o programa devidamente modular, logo evitando excesso de acoplamentos que poderiam tornar o sistema mais complexo, além do fato de que sempre que precisarmos alterar uma classe, só faremos isso com um único propósito, o que facilita possíveis refatorações.
 - **Como?**
