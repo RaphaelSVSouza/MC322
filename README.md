@@ -24,3 +24,13 @@ feito em dupla com @RaphaelSVSouza.
 - **Como?**
 	
 	Na biblioteca, um exemplo sólido de aplicação desse princípio é o uso de heranças e polimorfismo ao representar os itens, como a criação de novos tipos de exemplares físicos, como livros ou DVDs, que foram implementados sem que fosse preciso alterar os contratos da superclasse ExemplarFisico.
+	
+## L: Liskov Substitution Principle
+
+-  **Por que?** 
+
+	Para garantirmos que as abstrações do sistema estejam corretas, principalmente em relação às heranças, como no exemplo dado anteriormente no "princípio O", usamos a Liskov Substitution. Segundo ela, todo objeto de uma classe filha deve ser capaz de exercer a mesma funcionalidade do que um objeto de sua classe pai. 
+	
+- **Como?**
+
+	Aplicamos esse princípio principalmente através do desenvolvimento correto das heranças. Um exemplo que tira proveito disso é a estrutura de dados ItemBiblioteca, em que nele podemos utilizar qualquer itemMultimidia, ou seja, filhos dessa classe.
